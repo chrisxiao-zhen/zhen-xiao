@@ -80,6 +80,31 @@ const ResearchSection = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="mt-12"
+        >
+          <h3 className="font-display text-xl font-semibold text-foreground mb-6">Research Schematics</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            {researchSchematics.map((item, index) => (
+              <motion.div
+                key={item.caption}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-card rounded-lg border border-border overflow-hidden hover:shadow-lg hover:border-accent/30 transition-all duration-300"
+              >
+                <img src={item.src} alt={item.alt} className="w-full h-auto" />
+                <p className="text-muted-foreground text-sm text-center py-3 px-4 font-body">{item.caption}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
