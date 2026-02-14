@@ -2,13 +2,6 @@ import { motion } from "framer-motion";
 
 const publications = [
   {
-    authors: "Zhang, Q., Xiao, Z. (co-first), Colvin, V.L., et al.",
-    title: "The Giant Magnetic Susceptibility of Porous Nanocrystal Clusters",
-    journal: "Nature Nanotechnology",
-    year: "in revision",
-    highlight: true,
-  },
-  {
     authors: "Xiao, Z., Yen, C., Wang, T., Ibrahim, J., Rao, J., et al.",
     title: "Mycobacteriophage Functionalized Magnetic Nanocrystal Clusters for Highly Sensitive and Rapid Detection of Mycobacterium Tuberculosis",
     journal: "JACS Au",
