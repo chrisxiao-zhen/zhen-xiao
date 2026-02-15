@@ -56,11 +56,33 @@ const HeroSection = () => {
           </a>
         </motion.div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-10 flex flex-wrap justify-center gap-4"
+        >
+          <a
+            href="#research"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-md bg-accent text-accent-foreground font-medium text-sm uppercase tracking-wider hover:bg-accent/90 transition-colors"
+          >
+            Research Vision
+          </a>
+          <a
+            href="/Zhen_Xiao_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-md border border-primary-foreground/30 text-primary-foreground/80 font-medium text-sm uppercase tracking-wider hover:border-accent hover:text-accent transition-colors"
+          >
+            Download CV
+          </a>
+        </motion.div>
+
         <motion.nav
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-14 flex flex-wrap justify-center gap-8 text-primary-foreground/50 font-body text-sm uppercase tracking-widest"
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="mt-10 flex flex-wrap justify-center gap-8 text-primary-foreground/50 font-body text-sm uppercase tracking-widest"
         >
           {["Research", "Publications", "Education", "Awards", "Contact"].map((item) => (
             <a
