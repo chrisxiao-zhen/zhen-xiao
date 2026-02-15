@@ -59,7 +59,14 @@ const PublicationsSection = () => {
           <div className="gold-underline" />
           <h2 className="section-title">Selected Publications</h2>
           <p className="section-subtitle font-body">
-            22 peer-reviewed papers · 718+ citations · h-index: 14
+            <a
+              href="https://scholar.google.com/citations?user=gJdK1kcAAAAJ&hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:underline inline-flex items-center gap-1"
+            >
+              View all publications on Google Scholar →
+            </a>
           </p>
         </motion.div>
 
