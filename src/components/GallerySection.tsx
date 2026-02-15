@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.png";
@@ -27,7 +29,31 @@ const galleryImages = [
 ];
 
 const GallerySection = () => {
-  const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  const selectedImage = selectedIndex !== null ? galleryImages[selectedIndex] : null;
+
+  const goToPrev = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex - 1 + galleryImages.length) % galleryImages.length);
+    }
+  };
+
+  const goToNext = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex + 1) % galleryImages.length);
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedIndex === null) return;
+      if (e.key === "ArrowLeft") goToPrev();
+      if (e.key === "ArrowRight") goToNext();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedIndex]);
 
   return (
     <section id="gallery" className="bg-secondary/30">
@@ -51,7 +77,7 @@ const GallerySection = () => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
               className="cursor-pointer overflow-hidden rounded-lg border border-border hover:border-accent/30 transition-all hover:shadow-lg"
-              onClick={() => setSelectedImage(img)}
+              onClick={() => setSelectedIndex(index)}
             >
               <img
                 src={img.src}
@@ -63,14 +89,32 @@ const GallerySection = () => {
           ))}
         </div>
 
-        <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+        <Dialog open={selectedIndex !== null} onOpenChange={() => setSelectedIndex(null)}>
           <DialogContent className="max-w-4xl p-2">
             {selectedImage && (
-              <img
-                src={selectedImage.src}
-                alt={selectedImage.alt}
-                className="w-full h-auto rounded"
-              />
+              <div className="relative flex items-center">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute left-2 z-10 rounded-full bg-background/60 hover:bg-background/80"
+                  onClick={(e) => { e.stopPropagation(); goToPrev(); }}
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </Button>
+                <img
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
+                  className="w-full h-auto rounded"
+                />
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute right-2 z-10 rounded-full bg-background/60 hover:bg-background/80"
+                  onClick={(e) => { e.stopPropagation(); goToNext(); }}
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </Button>
+              </div>
             )}
           </DialogContent>
         </Dialog>
