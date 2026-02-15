@@ -12,7 +12,7 @@ const researchHighlights = [
   {
     title: "Cancer Theranostics",
     description:
-      "Engineered magnetic nanomaterials enabling dual-modality imaging (MRI, MPI) and magnetically targeted drug delivery for cancer theranostics.",
+      "Current cancer diagnostics and therapeutics typically operate as separate workflows, limiting the ability to adapt treatment in real time. To address this, I develop engineered magnetic nanomaterials that unify diagnosis and therapy on a single nanoplatform. By integrating dual-modality imaging—magnetic resonance imaging (MRI) and magnetic particle imaging (MPI)—with magnetically guided drug delivery, these systems enable precise tumor localization, real-time treatment monitoring, and targeted intervention. This theranostic approach improves treatment efficacy and reduces off-target toxicity compared to conventional, untargeted strategies.",
     detailedDescription:
       "I develop engineered magnetic nanomaterials that integrate diagnosis and therapy into a single platform for cancer theranostics. By combining magnetic resonance imaging (MRI) and magnetic particle imaging (MPI) with magnetically guided drug delivery, this work enables precise tumor localization, real-time treatment monitoring, and targeted therapeutic intervention. These multifunctional systems aim to improve treatment efficacy while minimizing off-target toxicity through externally controlled magnetic targeting.",
     image: researchTargeting,
@@ -21,7 +21,7 @@ const researchHighlights = [
   {
     title: "Immunotherapy Monitoring",
     description:
-      "Designed smart MPI probes to monitor granzyme B activity, providing real-time metrics for cancer immunotherapy efficacy.",
+      "A major barrier in cancer immunotherapy is the lack of noninvasive tools to assess therapeutic response in real time. I designed smart magnetic particle imaging (MPI) probes that activate in response to granzyme B, a key effector enzyme of cytotoxic T cells. These activatable nanoprobes provide quantitative, in vivo readouts of immune cell function at the molecular level. This capability enables clinicians to evaluate immunotherapy efficacy directly and guide therapeutic optimization without invasive biopsies.",
     detailedDescription:
       "To address the need for real-time assessment of cancer immunotherapy, I designed smart magnetic particle imaging (MPI) probes that report granzyme B activity in vivo. These activatable nanoprobes provide quantitative, noninvasive metrics of cytotoxic T-cell function, enabling direct monitoring of immunotherapy response at the molecular level. This approach offers a powerful tool for evaluating treatment efficacy and guiding therapeutic optimization.",
     image: researchNanoprobe,
@@ -30,7 +30,7 @@ const researchHighlights = [
   {
     title: "Tuberculosis Diagnostics",
     description:
-      "Developed a magneto-bacteriophage platform for rapid, highly sensitive detection of Mycobacterium tuberculosis. Supported by Stanford SPARK and Gates Foundation.",
+      "Tuberculosis remains a leading cause of infectious disease mortality, yet rapid point-of-care diagnostics for Mycobacterium tuberculosis are still limited in resource-constrained settings. I developed a magneto-bacteriophage detection platform that combines magnetic enrichment with bacteriophage specificity to achieve rapid, highly sensitive pathogen identification from complex clinical samples. This system requires minimal instrumentation, making it well suited for field deployment. Supported by the Stanford SPARK Translational Research Program and the Gates Foundation, this work underscores its translational and global health impact.",
     detailedDescription:
       "I developed a magneto-bacteriophage detection platform for rapid and highly sensitive identification of Mycobacterium tuberculosis, addressing a critical need in point-of-care diagnostics. By integrating magnetic enrichment with bacteriophage specificity, this system enables fast detection from complex samples with minimal instrumentation. This work is supported by the Stanford SPARK Translational Research Program and the Gates Foundation, underscoring its translational and global health impact.",
     image: researchTb,
@@ -39,7 +39,7 @@ const researchHighlights = [
   {
     title: "Drug-Resistant Bacteria Detection",
     description:
-      "Created a SERS biosensor using gold nanoparticles for multiplexed identification of drug-resistant bacterial strains.",
+      "Antimicrobial resistance is a rapidly growing global health threat, yet current diagnostic methods are often too slow or insufficiently specific to guide timely treatment. I created a surface-enhanced Raman scattering (SERS) biosensor based on engineered gold nanoparticles for multiplexed detection of drug-resistant bacterial strains. This platform delivers rapid identification with high sensitivity and molecular specificity, enabling clinicians to distinguish resistant from susceptible organisms at the point of care. The approach provides a scalable and adaptable diagnostic strategy for clinical microbiology and infectious disease surveillance.",
     detailedDescription:
       "To combat the growing challenge of antimicrobial resistance, I created a surface-enhanced Raman scattering (SERS) biosensor based on engineered gold nanoparticles for multiplexed bacterial detection. This platform enables rapid identification of drug-resistant strains with high sensitivity and molecular specificity. The approach provides a scalable and adaptable diagnostic strategy for clinical microbiology and infectious disease surveillance.",
     image: researchAbp,
@@ -48,7 +48,7 @@ const researchHighlights = [
   {
     title: "Copper-Depleting Nanoparticles",
     description:
-      "Formulated novel copper-depleting lipid nanoparticles as a targeted therapeutic strategy inducing cancer cell death by disrupting mitochondrial function.",
+      "Dysregulated copper metabolism is increasingly recognized as a vulnerability in cancer cells, yet few therapeutic strategies exploit this pathway with organelle-level precision. I formulated novel lipid-based nanoparticles that selectively sequester copper within mitochondria, disrupting mitochondrial function and inducing selective cancer cell death. This targeted approach spares healthy tissue by exploiting a metabolic dependency unique to tumor cells. The work highlights a new class of metabolic and organelle-specific nanotherapeutics with potential for clinical translation.",
     detailedDescription:
       "I formulated novel lipid-based nanoparticles that selectively sequester copper within mitochondria, exploiting metal dysregulation as a therapeutic vulnerability in cancer cells. By disrupting mitochondrial function through targeted copper depletion, these nanotherapeutics induce selective cancer cell death. This work highlights a new strategy for metabolic and organelle-specific cancer therapy.",
     image: researchCopper,
@@ -57,7 +57,7 @@ const researchHighlights = [
   {
     title: "Magnetic Nanoclusters",
     description:
-      "Engineered magnetic nanoclusters with 10-fold greater magnetic susceptibility, demonstrating high efficiency in magnetic separation and thermal applications.",
+      "Conventional magnetic nanoparticles often suffer from limited magnetic responsiveness, constraining their utility in separation, targeting, and hyperthermia applications. I engineered magnetic nanoclusters that achieve an order-of-magnitude increase in magnetic susceptibility compared to standard nanoparticle formulations. These enhanced properties translate into significantly improved performance across magnetic separation, targeted delivery, and thermal therapy modalities. The resulting platform offers a versatile foundation for next-generation bioseparation, diagnostics, and magnetically driven therapeutic technologies.",
     detailedDescription:
       "I engineered magnetic nanoclusters with an order-of-magnitude increase in magnetic susceptibility compared to conventional nanoparticles. These enhanced magnetic properties significantly improve performance in magnetic separation, targeting, and thermal applications. The resulting materials provide a versatile platform for bioseparation, diagnostics, and magnetically driven therapeutic technologies.",
     image: researchNanoclusters,
