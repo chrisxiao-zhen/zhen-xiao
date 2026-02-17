@@ -3,7 +3,7 @@ import { ExternalLink } from "lucide-react";
 
 const publications = [
   {
-    authors: "Xiao, Z., Yen, C., Wang, T., Ibrahim, J., Rao, J., et al.",
+    authors: "Xiao, Z., Yen, C., Wang, T., Ibrahim, J., Fu, Q., Dai, S.Y., Hajfathalian, M., Murugesan, K., Banaei, N., Bogyo, M.",
     title: "Mycobacteriophage Functionalized Magnetic Nanocrystal Clusters for Highly Sensitive and Rapid Detection of Mycobacterium Tuberculosis",
     journal: "JACS Au",
     year: "2025",
@@ -12,7 +12,7 @@ const publications = [
     highlight: true,
   },
   {
-    authors: "Lee, C.H., Xiao, Z., Lim, I., Wang, T., et al.",
+    authors: "Lee, C.H., Xiao, Z., Lim, I., Wang, T., Aghaei, P., Burke, P.J., Rao, J.",
     title: "Copper Chelation Induces Morphology Change in Mitochondria of Triple-Negative Breast Cancer",
     journal: "JACS Au",
     year: "2025",
@@ -20,7 +20,7 @@ const publications = [
     description: "Utilizes advanced imaging to extract image-based biomarkers (mitochondrial morphology) to monitor treatment response in aggressive cancer models.",
   },
   {
-    authors: "Xiao, Z., et al.",
+    authors: "Sudhahar, V., Xiao, Z., Das, A., Ash, D., Yadav, S., Matier, C.D., Pezacki, A.T., Chatterjee, B., Antipova, O.A., Vogt, S.",
     title: "Endothelial Cu Uptake Transporter CTR1 Senses Disturbed Flow to Promote Atherosclerosis through Cuproptosis",
     journal: "bioRxiv",
     year: "2025",
@@ -28,7 +28,7 @@ const publications = [
     description: "Showcases the application of imaging and molecular sensing in cardiovascular research, emphasizing the multidisciplinary reach of my technological platforms.",
   },
   {
-    authors: "Dai, S. Y., Xiao, Z., Rao, J., et al.",
+    authors: "Dai, S.Y., Xiao, Z., Shen, F., Lim, I., Rao, J.",
     title: "Light-Controlled Intracellular Synthesis of Poly(luciferin) Polymers Induces Cell Paraptosis",
     journal: "Journal of the American Chemical Society",
     year: "2025",
@@ -36,7 +36,7 @@ const publications = [
     description: "An innovative study on controlled intracellular polymer synthesis, highlighting expertise in bioconjugation and the development of activatable biological probes.",
   },
   {
-    authors: "Xiao, Z., et al.",
+    authors: "Cho, M., Villanova, J., Ines, D.M., Chen, J., Lee, S.S., Xiao, Z., Guo, X., Dunn, J.A., Stueber, D.D., Decuzzi, P.",
     title: "Sensitive T2 MRI Contrast Agents from the Rational Design of Iron Oxide Nanoparticle Surface Coatings",
     journal: "The Journal of Physical Chemistry C",
     year: "2023",
@@ -44,7 +44,7 @@ const publications = [
     description: "A systematic study on the selection of surface coatings for magnetic iron oxide nanoparticles and their impact on the T2 contrast for MRI.",
   },
   {
-    authors: "Dai, T., Xiao, Z. (co-first), Rao, J., et al.",
+    authors: "Dai, T., Xiao, Z. (co-first), Shan, D., Moreno, A., Li, H., Prakash, M., Banaei, N., Rao, J.",
     title: "Culture-independent Multiplexed Detection of Drug-resistant Bacteria Using Surface-enhanced Raman Scattering",
     journal: "ACS Sensors",
     year: "2023",
@@ -52,7 +52,7 @@ const publications = [
     description: "Demonstrates proficiency in optical imaging methods (SERS) for simultaneous detection of multiple drug-resistant pathogens.",
   },
   {
-    authors: "Xiao, Z., et al.",
+    authors: "Zhang, L., Zhang, Q., Hinojosa, D.T., Jiang, K., Pham, Q.K., Xiao, Z., Colvin, V.L., Bao, G.",
     title: "Multifunctional Magnetic Nanoclusters Can Induce Immunogenic Cell Death and Suppress Tumor Recurrence and Metastasis",
     journal: "ACS Nano",
     year: "2022",
@@ -60,7 +60,7 @@ const publications = [
     description: "Focuses on the theranostic application of imaging-capable clusters, showing how localized magnetic hyperthermia can trigger systemic anti-tumor immunity.",
   },
   {
-    authors: "Sebesta, C., et al. (incl. Xiao, Z.)",
+    authors: "Sebesta, C., Torres Hinojosa, D., Wang, B., Asfouri, J., Li, Z., Duret, G., Jiang, K., Xiao, Z., Zhang, L., Zhang, Q.",
     title: "Sub-second Multi-channel Magnetic Control of Select Neural Circuits in Behaving Flies",
     journal: "Nature Materials",
     year: "2022",
@@ -68,7 +68,7 @@ const publications = [
     description: "This interdisciplinary study showcases the use of magnetic nanomaterials for high-precision, in vivo biological control, demonstrating the versatility of these technologies in complex living systems.",
   },
   {
-    authors: "Xiao, Z., et al.",
+    authors: "Stinnett, G., Taheri, N., Villanova, J., Bohloul, A., Guo, X., Esposito, E.P., Xiao, Z., Stueber, D., Avendano, C., Decuzzi, P.",
     title: "2D Gadolinium Oxide Nanoplates as T1 Magnetic Resonance Imaging Contrast Agents",
     journal: "Advanced Healthcare Materials",
     year: "2021",
@@ -76,7 +76,7 @@ const publications = [
     description: "Highlights expertise in developing T1-weighted contrast agents, expanding my profile across multiple MRI modalities to improve diagnostic accuracy in healthcare.",
   },
   {
-    authors: "Xiao, Z., Zhang, Q., Guo, X., et al.",
+    authors: "Xiao, Z., Zhang, Q., Guo, X., Villanova, J., Hu, Y., Külaots, I., Garcia-Rojas, D., Guo, W., Colvin, V.L.",
     title: "Forming Libraries of Uniform Magnetic Multicore Nanoparticles with Tunable Dimensions and their Applications",
     journal: "ACS Applied Materials & Interfaces",
     year: "2020",
