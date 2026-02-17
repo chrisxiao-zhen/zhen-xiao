@@ -39,7 +39,6 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Open mailto with form data as a fallback
     const subject = encodeURIComponent(`Message from ${formData.name}`);
     const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
     window.location.href = `mailto:xiaozhen@stanford.edu?subject=${subject}&body=${body}`;
@@ -61,8 +60,8 @@ const ContactSection = () => {
             <h2 className="text-3xl md:text-4xl font-semibold text-primary-foreground font-display mb-4">
               Get in Touch
             </h2>
-            <p className="text-primary-foreground/60 font-body max-w-xl mb-12">
-              I am currently seeking academic positions. If you are interested in my research or would like to discuss collaboration opportunities, please feel free to reach out.
+            <p className="text-primary-foreground/60 font-body max-w-2xl mb-12 leading-relaxed">
+              I welcome discussions on faculty opportunities, collaborative research, and industry partnerships. Whether you represent a search committee, a research group, or an organization seeking expertise in nanotechnology and biomedical imaging, I would be glad to connect.
             </p>
           </motion.div>
 

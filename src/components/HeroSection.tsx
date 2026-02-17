@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
-import { Mail, MapPin, ExternalLink, Download, FileText } from "lucide-react";
+import { Mail, MapPin, ExternalLink, Download, FlaskConical } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -40,13 +40,10 @@ const HeroSection = () => {
               Zhen Xiao
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/70 font-body mb-6">
-              PhD · Postdoctoral Scholar
+              PhD · Postdoctoral Scholar, Stanford University
             </p>
-            <p className="text-primary-foreground/60 font-body text-base leading-relaxed max-w-lg mb-4">
-              Stanford University School of Medicine
-            </p>
-            <p className="text-primary-foreground/50 font-body text-sm leading-relaxed max-w-lg mb-8">
-              I develop nanotechnology-enabled platforms for molecular imaging of tumors and pathogens, with an emphasis on bridging bench-scale innovation and clinical deployment. My long-term vision is to pioneer clinically translatable imaging and nanomedicine technologies for the early detection, monitoring, and treatment of cancer and infectious diseases.
+            <p className="text-primary-foreground/60 font-body text-base leading-relaxed max-w-lg mb-8">
+              I engineer magnetic nanomaterials for molecular imaging, translational diagnostics, and cancer theranostics—enabling real-time diagnosis and therapy monitoring at the point of care.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 text-primary-foreground/50 font-body text-sm mb-8">
@@ -74,20 +71,20 @@ const HeroSection = () => {
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
               <a
+                href="/research-vision"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-accent text-accent-foreground font-bold text-sm tracking-wide hover:bg-accent/90 transition-colors shadow-lg shadow-accent/20"
+              >
+                <FlaskConical className="w-4 h-4" />
+                Research Vision
+              </a>
+              <a
                 href="/Zhen_Xiao_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-md bg-accent text-accent-foreground font-semibold text-sm tracking-wide hover:bg-accent/90 transition-colors"
+                className="inline-flex items-center gap-2 px-7 py-3 rounded-md border border-primary-foreground/25 text-primary-foreground/80 font-semibold text-sm tracking-wide hover:border-accent hover:text-accent transition-colors"
               >
                 <Download className="w-4 h-4" />
                 Download CV
-              </a>
-              <a
-                href="#publications"
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-md border border-primary-foreground/25 text-primary-foreground/80 font-semibold text-sm tracking-wide hover:border-accent hover:text-accent transition-colors"
-              >
-                <FileText className="w-4 h-4" />
-                View Publications
               </a>
             </div>
           </motion.div>
