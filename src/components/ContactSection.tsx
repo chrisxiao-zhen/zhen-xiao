@@ -48,7 +48,7 @@ const ContactSection = () => {
 
   return (
     <>
-      <section id="contact" className="bg-primary">
+      <section id="contact" className="bg-primary scroll-mt-16">
         <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

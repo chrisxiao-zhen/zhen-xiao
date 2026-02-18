@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="bg-background">
+    <section id="about" className="bg-background scroll-mt-16">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -19,14 +20,25 @@ const AboutSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-8 max-w-3xl"
+          className="mt-8 grid md:grid-cols-2 gap-10 items-center"
         >
-          <p className="text-muted-foreground text-lg leading-relaxed font-body mb-6">
-            I am a postdoctoral scholar at Stanford University with over eight years of experience in the synthesis and characterization of nanomaterials, and more than five years applying these materials in biomedical and translational settings. My work focuses on magnetic nanomaterials for molecular imaging, translational diagnostics, and cancer theranostics.
-          </p>
-          <p className="text-muted-foreground text-lg leading-relaxed font-body">
-            My long-term vision is to establish an independent research program that pioneers clinically translatable imaging and nanomedicine technologies—accelerating the path from materials discovery to patient impact in oncology and infectious disease.
-          </p>
+          <div>
+            <p className="text-muted-foreground text-lg leading-relaxed font-body mb-6">
+              I am a postdoctoral scholar at Stanford University with over eight years of experience in the synthesis and characterization of nanomaterials, and more than five years applying these materials in biomedical and translational settings. My work focuses on magnetic nanomaterials for molecular imaging, translational diagnostics, and cancer theranostics.
+            </p>
+            <p className="text-muted-foreground text-lg leading-relaxed font-body">
+              My long-term vision is to establish an independent research program that pioneers clinically translatable imaging and nanomedicine technologies—accelerating the path from materials discovery to patient impact in oncology and infectious disease.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <div className="rounded-xl overflow-hidden border border-border shadow-md max-w-sm">
+              <img
+                src={heroBg}
+                alt="Dr. Zhen Xiao"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

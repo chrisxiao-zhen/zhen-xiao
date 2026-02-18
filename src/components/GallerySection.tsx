@@ -16,7 +16,7 @@ import gallery10 from "@/assets/gallery-10.png";
 const galleryImages = [
   { src: gallery1, alt: "Magnetic nanoparticle sample with magnet", caption: "Magnetic nanoparticle suspension responding to an external magnetic field, demonstrating high magnetic susceptibility." },
   { src: gallery2, alt: "Ferrofluid under magnetic field", caption: "Ferrofluid spiking pattern under applied magnetic field, illustrating the collective behavior of magnetic nanoclusters." },
-  { src: gallery3, alt: "TEM image of nanoparticle clusters", caption: "Transmission electron microscopy (TEM) image of self-assembled magnetic nanocrystal clusters with controlled size distribution." },
+  { src: gallery3, alt: "TEM image of nanoparticle clusters", caption: "Transmission electron microscopy (TEM) image of magnetic nanocrystal clusters showing a heart shape." },
   { src: gallery4, alt: "TEM image of nanoparticle-labeled bacterium", caption: "TEM image showing bacteriophage-functionalized magnetic nanoparticles bound to a Mycobacterium tuberculosis cell surface." },
   { src: gallery5, alt: "TEM images of various nanoparticle morphologies", caption: "Library of magnetic nanoparticle morphologies synthesized through systematic tuning of reaction parameters." },
   { src: gallery6, alt: "TEM image of cell ultrastructure", caption: "High-resolution TEM image of cancer cell ultrastructure showing nanoparticle uptake and intracellular localization." },
@@ -64,7 +64,7 @@ const GallerySection = () => {
   }, [selectedIndex]);
 
   return (
-    <section id="gallery" className="bg-secondary/30">
+    <section id="gallery" className="bg-secondary/30 scroll-mt-16">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

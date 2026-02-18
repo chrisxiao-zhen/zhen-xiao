@@ -78,35 +78,18 @@ const HeroSection = () => {
                 Research Vision
               </a>
               <a
-                href="/Zhen_Xiao_CV.pdf"
+                href="https://docs.google.com/document/d/1UrDM7kZR_LkMkVEU3GzYNniY0-twTvJy/edit?usp=sharing&ouid=117431193444659149744&rtpof=true&sd=true"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-7 py-3 rounded-md border border-primary-foreground/25 text-primary-foreground/80 font-semibold text-sm tracking-wide hover:border-accent hover:text-accent transition-colors"
               >
                 <Download className="w-4 h-4" />
-                Download CV
+                Access CV
               </a>
             </div>
           </motion.div>
         </div>
 
-        {/* Navigation */}
-        <motion.nav
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16 pt-8 border-t border-primary-foreground/10 flex flex-wrap justify-center gap-8 text-primary-foreground/40 font-body text-sm uppercase tracking-widest"
-        >
-          {["Research", "Publications", "Education", "Awards", "Gallery", "Contact"].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="hover:text-accent transition-colors duration-300"
-            >
-              {item}
-            </a>
-          ))}
-        </motion.nav>
       </div>
     </section>
   );
