@@ -124,7 +124,11 @@ const PublicationsSection = () => {
               <h3 className="font-display text-lg md:text-xl font-semibold text-foreground leading-snug">
                 {pub.title}
               </h3>
-              <p className="text-muted-foreground text-sm font-body mt-1">{pub.authors}</p>
+              <p className="text-muted-foreground text-sm font-body mt-1">
+                {pub.authors.split(/(Xiao, Z\.)/).map((part, i) =>
+                  part === "Xiao, Z." ? <strong key={i} className="font-bold text-foreground">{part}</strong> : part
+                )}
+              </p>
               <p className="text-sm font-body mt-1">
                 <span className="text-accent font-medium italic">{pub.journal}</span>
                 <span className="text-muted-foreground"> · {pub.year}</span>

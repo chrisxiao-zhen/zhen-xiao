@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.png";
 import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.png";
+import gallery4 from "@/assets/gallery-4-new.png";
 import gallery5 from "@/assets/gallery-5.png";
 import gallery6 from "@/assets/gallery-6.png";
 import gallery7 from "@/assets/gallery-7.png";
@@ -17,8 +17,8 @@ const galleryImages = [
   { src: gallery1, alt: "Magnetic nanoparticle sample with magnet", caption: "Magnetic nanoparticle suspension responding to an external magnetic field, demonstrating high magnetic susceptibility." },
   { src: gallery2, alt: "Ferrofluid under magnetic field", caption: "Ferrofluid spiking pattern under applied magnetic field, illustrating the collective behavior of magnetic nanoclusters." },
   { src: gallery3, alt: "TEM image of nanoparticle clusters", caption: "Transmission electron microscopy (TEM) image of magnetic nanocrystal clusters showing a heart shape." },
-  { src: gallery4, alt: "TEM image of nanoparticle-labeled bacterium", caption: "TEM image showing bacteriophage-functionalized magnetic nanoparticles bound to a Mycobacterium tuberculosis cell surface." },
-  { src: gallery5, alt: "TEM images of various nanoparticle morphologies", caption: "Library of magnetic nanoparticle morphologies synthesized through systematic tuning of reaction parameters." },
+  { src: gallery4, alt: "TEM image of nanoparticle chains on bacterium", caption: "TEM image of magnetic nanoparticle chains assembled on a Mycobacterium tuberculosis cell surface." },
+  { src: gallery5, alt: "TEM images of various nanoparticle morphologies", caption: "Library of gold nanoparticle morphologies synthesized through systematic tuning of reaction parameters." },
   { src: gallery6, alt: "TEM image of cell ultrastructure", caption: "High-resolution TEM image of cancer cell ultrastructure showing nanoparticle uptake and intracellular localization." },
   { src: gallery7, alt: "TEM image of mitochondria", caption: "TEM image of mitochondrial morphology changes induced by copper-depleting nanoparticles in triple-negative breast cancer cells." },
   { src: gallery8, alt: "Nanoparticle colloidal solutions at Brown University", caption: "Colloidal suspensions of iron oxide nanoparticles with varying sizes and surface coatings, prepared at Brown University." },
