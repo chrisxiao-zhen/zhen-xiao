@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { GraduationCap } from "lucide-react";
 
-const education = [
+const education: { degree: string; institution: string; period: string; detail: string; advisorLink?: string }[] = [
   {
     degree: "Postdoctoral Scholar",
     institution: "Stanford University, School of Medicine",
     period: "2022 – Present",
     detail: "Molecular Imaging Program at Stanford · Advisor: Prof. Jianghong Rao",
+    advisorLink: "https://raolab.stanford.edu/",
   },
   {
     degree: "Ph.D. in Chemistry",
@@ -56,7 +57,12 @@ const EducationSection = () => {
                 <p className="text-foreground/80 font-body font-medium">{edu.institution}</p>
                 <p className="text-accent text-sm font-body font-medium mt-1">{edu.period}</p>
                 <p className="text-muted-foreground text-sm font-body mt-2 leading-relaxed max-w-2xl">
-                  {edu.detail}
+                  {edu.advisorLink ? (
+                    <>
+                      {edu.detail.split("Prof. Jianghong Rao")[0]}
+                      <a href={edu.advisorLink} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Prof. Jianghong Rao</a>
+                    </>
+                  ) : edu.detail}
                 </p>
               </div>
             </motion.div>

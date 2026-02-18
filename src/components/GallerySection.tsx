@@ -12,6 +12,7 @@ import gallery7 from "@/assets/gallery-7.png";
 import gallery8 from "@/assets/gallery-8.png";
 import gallery9 from "@/assets/gallery-9.png";
 import gallery10 from "@/assets/gallery-10.png";
+import gallery11 from "@/assets/gallery-11.png";
 
 const galleryImages = [
   { src: gallery1, alt: "Magnetic nanoparticle sample with magnet", caption: "Magnetic nanoparticle suspension responding to an external magnetic field, demonstrating high magnetic susceptibility." },
@@ -24,6 +25,7 @@ const galleryImages = [
   { src: gallery8, alt: "Nanoparticle colloidal solutions at Brown University", caption: "Colloidal suspensions of iron oxide nanoparticles with varying sizes and surface coatings, prepared at Brown University." },
   { src: gallery9, alt: "TEM image of core-shell nanoparticles", caption: "Core-shell nanoparticle architecture visualized by TEM, engineered for enhanced MRI contrast performance." },
   { src: gallery10, alt: "TEM image of iron oxide nanoparticles", caption: "Monodisperse iron oxide nanoparticles with uniform size distribution, optimized for biomedical imaging applications." },
+  { src: gallery11, alt: "Photonic crystal clusters under magnetic field", caption: "Clusters as magnetically controllable photonic crystals. Images of the cluster solution showing different colors at different external magnetic field strengths." },
 ];
 
 const GallerySection = () => {

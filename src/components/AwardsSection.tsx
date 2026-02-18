@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { Award, Sparkles } from "lucide-react";
 
-const awards = [
+const awards: { title: string; year: string; detail: string; translational: boolean; link?: string }[] = [
   { title: "Stanford SPARK Translational Research Program", year: "2025", detail: "Rapid, point-of-care detection of Mycobacterium tuberculosis", translational: true },
-  { title: "Gates Foundation Grand Challenges Grant", year: "2025", detail: "Co-investigator on developing novel tuberculosis diagnostics", translational: true },
+  { title: "Gates Foundation Grand Challenges Grant", year: "2025", detail: "Co-investigator on developing novel tuberculosis diagnostics", translational: true, link: "https://gcgh.grandchallenges.org/grant/magnetic-capturing-technique-sputum-sample-processing" },
   { title: "WMIC Student Travel Award", year: "2024", detail: "World Molecular Imaging Congress", translational: false },
   { title: "Bio-X Rank 1 Poster Award", year: "2024", detail: "Stanford Bio-X Interdisciplinary Initiatives", translational: false },
   { title: "Outstanding Student Poster Award", year: "2022", detail: "ACS Division of Colloid and Surface Chemistry", translational: false },
@@ -49,7 +49,11 @@ const AwardsSection = () => {
                 <h3 className={`font-body text-sm font-semibold ${
                   award.translational ? "text-accent" : "text-foreground"
                 }`}>
-                  {award.title}
+                  {award.link ? (
+                    <a href={award.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                      {award.title}
+                    </a>
+                  ) : award.title}
                 </h3>
                 <p className="text-muted-foreground text-xs font-body mt-0.5">
                   {award.detail} · {award.year}
