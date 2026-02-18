@@ -1,3 +1,4 @@
+import StickyNav from "@/components/StickyNav";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ResearchSection from "@/components/ResearchSection";
@@ -10,6 +11,7 @@ import ContactSection from "@/components/ContactSection";
 const Index = () => {
   return (
     <main className="min-h-screen">
+      <StickyNav />
       <HeroSection />
       <AboutSection />
       <ResearchSection />

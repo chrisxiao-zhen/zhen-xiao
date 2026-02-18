@@ -87,7 +87,7 @@ const publications = [
 
 const PublicationsSection = () => {
   return (
-    <section id="publications" className="bg-background">
+    <section id="publications" className="bg-background scroll-mt-16">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -121,7 +121,7 @@ const PublicationsSection = () => {
                 pub.highlight ? "border-accent" : "border-border"
               }`}
             >
-              <h3 className="font-display text-base font-medium text-foreground leading-snug">
+              <h3 className="font-display text-lg md:text-xl font-semibold text-foreground leading-snug">
                 {pub.title}
               </h3>
               <p className="text-muted-foreground text-sm font-body mt-1">{pub.authors}</p>
@@ -136,7 +136,7 @@ const PublicationsSection = () => {
                 href={pub.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 mt-2 px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
+                className="inline-flex items-center gap-1.5 mt-3 px-4 py-1.5 rounded-md text-xs font-semibold border border-accent text-accent bg-transparent hover:bg-accent/10 transition-colors"
               >
                 <ExternalLink className="w-3 h-3" />
                 View Paper

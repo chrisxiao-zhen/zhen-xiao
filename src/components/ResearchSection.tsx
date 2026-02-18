@@ -66,7 +66,7 @@ const researchHighlights = [
 
 const ResearchSection = () => {
   return (
-    <section id="research" className="bg-secondary/30">
+    <section id="research" className="bg-background scroll-mt-16">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -103,10 +103,12 @@ const ResearchSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start"
+                className={`rounded-2xl px-6 py-10 md:px-10 md:py-12 grid md:grid-cols-2 gap-10 lg:gap-16 items-start ${
+                  index % 2 === 0 ? "bg-background" : "bg-secondary/40"
+                }`}
               >
                 {/* Image */}
-                <div className={`${isReversed ? "lg:order-2" : "lg:order-1"}`}>
+                <div className={`${isReversed ? "md:order-2" : "md:order-1"}`}>
                   <motion.div
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
@@ -125,7 +127,7 @@ const ResearchSection = () => {
                 </div>
 
                 {/* Text */}
-                <div className={`${isReversed ? "lg:order-1" : "lg:order-2"}`}>
+                <div className={`${isReversed ? "md:order-1" : "md:order-2"}`}>
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-0.5 bg-accent" />
                     {item.funding && (
