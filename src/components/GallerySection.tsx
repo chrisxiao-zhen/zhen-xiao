@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, Play } from "lucide-react";
 
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.png";
@@ -15,8 +15,16 @@ import gallery10 from "@/assets/gallery-10.png";
 import gallery11 from "@/assets/gallery-11.png";
 import gallery12 from "@/assets/gallery-12.png";
 import gallery13 from "@/assets/gallery-13.png";
+import galleryVideo1 from "@/assets/gallery-video-1.mp4";
 
-const galleryImages = [
+type GalleryItem = {
+  src: string;
+  alt: string;
+  caption: string;
+  type?: "image" | "video";
+};
+
+const galleryImages: GalleryItem[] = [
   { src: gallery1, alt: "Magnetic nanoparticle sample with magnet", caption: "Magnetic nanoparticle suspension responding to an external magnetic field, demonstrating high magnetic susceptibility." },
   { src: gallery2, alt: "Ferrofluid under magnetic field", caption: "Ferrofluid spiking pattern under applied magnetic field, illustrating the collective behavior of magnetic nanoclusters." },
   { src: gallery3, alt: "TEM image of nanoparticle clusters", caption: "Transmission electron microscopy (TEM) image of magnetic nanocrystal clusters showing a heart shape." },
@@ -30,6 +38,7 @@ const galleryImages = [
   { src: gallery11, alt: "Photonic crystal clusters under magnetic field", caption: "Clusters as magnetically controllable photonic crystals. Images of the cluster solution showing different colors at different external magnetic field strengths." },
   { src: gallery12, alt: "Magnetic separation of U2OS cancer cells", caption: "Efficient magnetic separation of U2OS cancer cells following intracellular uptake of magnetic nanoclusters, achieved using simple fridge magnets." },
   { src: gallery13, alt: "Iron Oxide Man nanocluster assembly", caption: "A human-like assembly of iron oxide nanoclusters observed by TEM, arising from collective magnetic interactions (\"Iron Oxide Man\")." },
+  { src: galleryVideo1, alt: "Chain assembly of magnetic nanoclusters as nano stirbars", caption: "Chain assembly of the magnetic nanoclusters as efficient nano stirbars.", type: "video" },
 ];
 
 const GallerySection = () => {
@@ -97,13 +106,30 @@ const GallerySection = () => {
               className="break-inside-avoid cursor-pointer group"
               onClick={() => setSelectedIndex(index)}
             >
-              <div className="overflow-hidden rounded-lg border border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg">
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
+              <div className="relative overflow-hidden rounded-lg border border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg">
+                {img.type === "video" ? (
+                  <>
+                    <video
+                      src={img.src}
+                      className="w-full h-auto"
+                      muted
+                      playsInline
+                      preload="metadata"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors">
+                      <div className="bg-white/20 backdrop-blur-sm rounded-full p-3 group-hover:bg-white/30 transition-colors">
+                        <Play className="w-6 h-6 text-white fill-white" />
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                )}
               </div>
             </motion.div>
           ))}
@@ -138,20 +164,34 @@ const GallerySection = () => {
                 <ChevronLeft className="w-10 h-10" />
               </button>
 
-              {/* Image + Caption */}
+              {/* Media + Caption */}
               <div
                 className="flex flex-col items-center max-w-5xl max-h-[90vh] px-4"
                 onClick={(e) => e.stopPropagation()}
               >
-                <motion.img
-                  key={selectedIndex}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3 }}
-                  src={selectedImage.src}
-                  alt={selectedImage.alt}
-                  className="max-h-[75vh] w-auto rounded-lg shadow-2xl object-contain"
-                />
+                {selectedImage.type === "video" ? (
+                  <motion.video
+                    key={selectedIndex}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3 }}
+                    src={selectedImage.src}
+                    className="max-h-[75vh] w-auto rounded-lg shadow-2xl"
+                    controls
+                    autoPlay
+                    playsInline
+                  />
+                ) : (
+                  <motion.img
+                    key={selectedIndex}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3 }}
+                    src={selectedImage.src}
+                    alt={selectedImage.alt}
+                    className="max-h-[75vh] w-auto rounded-lg shadow-2xl object-contain"
+                  />
+                )}
                 <p className="text-white/70 text-sm font-body text-center mt-4 max-w-2xl leading-relaxed">
                   {selectedImage.caption}
                 </p>
