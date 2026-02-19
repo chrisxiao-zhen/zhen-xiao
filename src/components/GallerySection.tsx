@@ -14,6 +14,7 @@ import gallery9 from "@/assets/gallery-9.png";
 import gallery10 from "@/assets/gallery-10.png";
 import gallery11 from "@/assets/gallery-11.png";
 import gallery12 from "@/assets/gallery-12.png";
+import gallery13 from "@/assets/gallery-13.png";
 
 const galleryImages = [
   { src: gallery1, alt: "Magnetic nanoparticle sample with magnet", caption: "Magnetic nanoparticle suspension responding to an external magnetic field, demonstrating high magnetic susceptibility." },
@@ -28,6 +29,7 @@ const galleryImages = [
   { src: gallery10, alt: "TEM image of iron oxide nanoparticles", caption: "Monodisperse iron oxide nanoparticles with uniform size distribution, optimized for biomedical imaging applications." },
   { src: gallery11, alt: "Photonic crystal clusters under magnetic field", caption: "Clusters as magnetically controllable photonic crystals. Images of the cluster solution showing different colors at different external magnetic field strengths." },
   { src: gallery12, alt: "Magnetic separation of U2OS cancer cells", caption: "Efficient magnetic separation of U2OS cancer cells following intracellular uptake of magnetic nanoclusters, achieved using simple fridge magnets." },
+  { src: gallery13, alt: "Iron Oxide Man nanocluster assembly", caption: "A human-like assembly of iron oxide nanoclusters observed by TEM, arising from collective magnetic interactions (\"Iron Oxide Man\")." },
 ];
 
 const GallerySection = () => {
