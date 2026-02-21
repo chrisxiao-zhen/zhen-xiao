@@ -87,7 +87,7 @@ const publications = [
 
 const PublicationsSection = () => {
   return (
-    <section id="publications" className="bg-secondary/30 scroll-mt-16">
+    <section id="publications" className="bg-secondary scroll-mt-16">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

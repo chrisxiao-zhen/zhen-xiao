@@ -25,7 +25,7 @@ const education: { degree: string; institution: string; period: string; detail: 
 
 const EducationSection = () => {
   return (
-    <section id="education" className="bg-secondary/30">
+    <section id="education" className="bg-secondary scroll-mt-16">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
