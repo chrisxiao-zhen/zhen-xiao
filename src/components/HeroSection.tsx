@@ -1,14 +1,98 @@
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 import heroBg from "@/assets/hero-bg.jpg";
 import { Mail, MapPin, ExternalLink, Download, FlaskConical } from "lucide-react";
 
+const NanoParticles = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    let animationId: number;
+    const particles: { x: number; y: number; r: number; vx: number; vy: number; opacity: number }[] = [];
+
+    const resize = () => {
+      canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+      canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    };
+    resize();
+    window.addEventListener("resize", resize);
+
+    // Create particles
+    for (let i = 0; i < 60; i++) {
+      particles.push({
+        x: Math.random() * canvas.offsetWidth,
+        y: Math.random() * canvas.offsetHeight,
+        r: Math.random() * 2 + 0.5,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        opacity: Math.random() * 0.3 + 0.05,
+      });
+    }
+
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
+
+      // Draw connections
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(0, 212, 200, ${0.06 * (1 - dist / 120)})`;
+            ctx.lineWidth = 0.5;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw particles
+      particles.forEach((p) => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(0, 212, 200, ${p.opacity})`;
+        ctx.fill();
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > canvas.offsetWidth) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.offsetHeight) p.vy *= -1;
+      });
+
+      animationId = requestAnimationFrame(draw);
+    };
+    draw();
+
+    return () => {
+      cancelAnimationFrame(animationId);
+      window.removeEventListener("resize", resize);
+    };
+  }, []);
+
+  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />;
+};
+
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-primary">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary/90" />
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/50" />
+
+      {/* Animated nanoparticles */}
+      <NanoParticles />
 
       <div className="relative z-10 section-container w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Profile Photo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -17,14 +101,16 @@ const HeroSection = () => {
             className="flex justify-center lg:justify-end order-1 lg:order-2"
           >
             <div className="relative">
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-2 border-accent/30 shadow-2xl">
+              <div className="w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden border border-accent/20 shadow-2xl shadow-accent/5">
                 <img
                   src={heroBg}
                   alt="Dr. Zhen Xiao"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-3 -right-3 w-64 h-64 md:w-80 md:h-80 rounded-2xl border border-accent/20 -z-10" />
+              <div className="absolute -bottom-4 -right-4 w-72 h-72 md:w-96 md:h-96 rounded-2xl border border-accent/10 -z-10" />
+              {/* Decorative glow */}
+              <div className="absolute -top-8 -left-8 w-32 h-32 bg-accent/5 rounded-full blur-3xl" />
             </div>
           </motion.div>
 
@@ -36,60 +122,62 @@ const HeroSection = () => {
             className="order-2 lg:order-1"
           >
             <div className="gold-underline" />
-            <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-3 tracking-tight font-display">
+            <h1 className="text-5xl md:text-7xl font-black text-foreground mb-4 tracking-tight leading-[1.1]">
               Zhen Xiao
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/70 font-body mb-6">
+            <p className="text-lg md:text-xl text-muted-foreground mb-6">
               PhD · Postdoctoral Scholar, Stanford University
             </p>
-            <p className="text-primary-foreground/60 font-body text-base leading-relaxed max-w-lg mb-8">
+            <p className="text-muted-foreground text-base leading-relaxed max-w-lg mb-10">
               I engineer magnetic nanomaterials for molecular imaging, translational diagnostics, and cancer theranostics—enabling real-time diagnosis and therapy monitoring at the point of care.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 text-primary-foreground/50 font-body text-sm mb-8">
+            <div className="flex flex-wrap items-center gap-3 text-muted-foreground text-sm mb-10">
               <span className="flex items-center gap-1.5">
                 <MapPin className="w-3.5 h-3.5 text-accent" />
                 California, USA
               </span>
-              <span className="text-primary-foreground/20">|</span>
+              <span className="text-border">|</span>
               <a href="mailto:xiaozhen@stanford.edu" className="flex items-center gap-1.5 hover:text-accent transition-colors">
                 <Mail className="w-3.5 h-3.5 text-accent" />
                 xiaozhen@stanford.edu
               </a>
-              <span className="text-primary-foreground/20">|</span>
+            </div>
+
+            {/* CTA Buttons - Larger and more prominent */}
+            <div className="flex flex-wrap gap-5">
               <a
                 href="https://profiles.stanford.edu/zhen-xiao?tab=bio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 hover:text-accent transition-colors"
+                className="inline-flex items-center gap-2.5 px-10 py-4 rounded-lg bg-accent text-accent-foreground font-bold text-base tracking-wide hover:brightness-110 transition-all shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/30"
               >
-                <ExternalLink className="w-3.5 h-3.5 text-accent" />
-                Stanford Profile
-              </a>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="/research-vision"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-accent text-accent-foreground font-bold text-sm tracking-wide hover:bg-accent/90 transition-colors shadow-lg shadow-accent/20"
-              >
-                <FlaskConical className="w-4 h-4" />
-                Research Vision
+                <ExternalLink className="w-5 h-5" />
+                View Stanford Profile
               </a>
               <a
                 href="https://docs.google.com/document/d/1UrDM7kZR_LkMkVEU3GzYNniY0-twTvJy/edit?usp=sharing&ouid=117431193444659149744&rtpof=true&sd=true"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-md border border-primary-foreground/25 text-primary-foreground/80 font-semibold text-sm tracking-wide hover:border-accent hover:text-accent transition-colors"
+                className="inline-flex items-center gap-2.5 px-10 py-4 rounded-lg border border-accent/40 text-foreground font-bold text-base tracking-wide hover:border-accent hover:text-accent transition-all hover:bg-accent/5"
               >
-                <Download className="w-4 h-4" />
+                <Download className="w-5 h-5" />
                 Access CV
+              </a>
+            </div>
+
+            {/* Research Vision link below */}
+            <div className="mt-6">
+              <a
+                href="/research-vision"
+                className="inline-flex items-center gap-2 text-accent text-sm font-semibold hover:underline transition-colors"
+              >
+                <FlaskConical className="w-4 h-4" />
+                Explore Research Vision →
               </a>
             </div>
           </motion.div>
         </div>
-
       </div>
     </section>
   );

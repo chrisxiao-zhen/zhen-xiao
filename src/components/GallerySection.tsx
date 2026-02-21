@@ -68,7 +68,6 @@ const GallerySection = () => {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [selectedIndex]);
 
-  // Prevent body scroll when lightbox is open
   useEffect(() => {
     if (selectedIndex !== null) {
       document.body.style.overflow = "hidden";
@@ -79,7 +78,7 @@ const GallerySection = () => {
   }, [selectedIndex]);
 
   return (
-    <section id="gallery" className="bg-secondary/30 scroll-mt-16">
+    <section id="gallery" className="bg-background scroll-mt-16">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -89,7 +88,7 @@ const GallerySection = () => {
         >
           <div className="gold-underline" />
           <h2 className="section-title">Gallery</h2>
-          <p className="section-subtitle font-body">
+          <p className="section-subtitle">
             Microscopy, instrumentation, and laboratory imaging
           </p>
         </motion.div>
@@ -106,7 +105,7 @@ const GallerySection = () => {
               className="break-inside-avoid cursor-pointer group"
               onClick={() => setSelectedIndex(index)}
             >
-              <div className="relative overflow-hidden rounded-lg border border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg">
+              <div className="relative overflow-hidden rounded-lg border border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5">
                 {img.type === "video" ? (
                   <>
                     <video
@@ -116,9 +115,9 @@ const GallerySection = () => {
                       playsInline
                       preload="metadata"
                     />
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors">
-                      <div className="bg-white/20 backdrop-blur-sm rounded-full p-3 group-hover:bg-white/30 transition-colors">
-                        <Play className="w-6 h-6 text-white fill-white" />
+                    <div className="absolute inset-0 flex items-center justify-center bg-background/40 group-hover:bg-background/20 transition-colors">
+                      <div className="bg-accent/20 backdrop-blur-sm rounded-full p-3 group-hover:bg-accent/30 transition-colors">
+                        <Play className="w-6 h-6 text-foreground fill-foreground" />
                       </div>
                     </div>
                   </>
@@ -143,28 +142,25 @@ const GallerySection = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
+              className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex items-center justify-center"
               onClick={() => setSelectedIndex(null)}
             >
-              {/* Close */}
               <button
                 onClick={() => setSelectedIndex(null)}
-                className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-50"
+                className="absolute top-6 right-6 text-muted-foreground hover:text-foreground transition-colors z-50"
                 aria-label="Close lightbox"
               >
                 <X className="w-7 h-7" />
               </button>
 
-              {/* Prev */}
               <button
                 onClick={(e) => { e.stopPropagation(); goToPrev(); }}
-                className="absolute left-4 md:left-8 text-white/60 hover:text-white transition-colors z-50"
+                className="absolute left-4 md:left-8 text-muted-foreground hover:text-foreground transition-colors z-50"
                 aria-label="Previous image"
               >
                 <ChevronLeft className="w-10 h-10" />
               </button>
 
-              {/* Media + Caption */}
               <div
                 className="flex flex-col items-center max-w-5xl max-h-[90vh] px-4"
                 onClick={(e) => e.stopPropagation()}
@@ -192,18 +188,17 @@ const GallerySection = () => {
                     className="max-h-[75vh] w-auto rounded-lg shadow-2xl object-contain"
                   />
                 )}
-                <p className="text-white/70 text-sm font-body text-center mt-4 max-w-2xl leading-relaxed">
+                <p className="text-muted-foreground text-sm text-center mt-4 max-w-2xl leading-relaxed">
                   {selectedImage.caption}
                 </p>
-                <p className="text-white/40 text-xs font-body mt-2">
+                <p className="text-muted-foreground/50 text-xs mt-2">
                   {(selectedIndex ?? 0) + 1} / {galleryImages.length}
                 </p>
               </div>
 
-              {/* Next */}
               <button
                 onClick={(e) => { e.stopPropagation(); goToNext(); }}
-                className="absolute right-4 md:right-8 text-white/60 hover:text-white transition-colors z-50"
+                className="absolute right-4 md:right-8 text-muted-foreground hover:text-foreground transition-colors z-50"
                 aria-label="Next image"
               >
                 <ChevronRight className="w-10 h-10" />

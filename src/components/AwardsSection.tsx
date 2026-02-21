@@ -37,7 +37,7 @@ const AwardsSection = () => {
               className={`flex gap-4 p-4 rounded-lg transition-colors ${
                 award.translational
                   ? "bg-accent/5 border border-accent/15 hover:bg-accent/10"
-                  : "hover:bg-secondary/60"
+                  : "bg-card/50 hover:bg-card"
               }`}
             >
               {award.translational ? (
@@ -46,7 +46,7 @@ const AwardsSection = () => {
                 <Award className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
               )}
               <div>
-                <h3 className={`font-body text-sm font-semibold ${
+                <h3 className={`text-sm font-semibold ${
                   award.translational ? "text-accent" : "text-foreground"
                 }`}>
                   {award.link ? (
@@ -55,7 +55,7 @@ const AwardsSection = () => {
                     </a>
                   ) : award.title}
                 </h3>
-                <p className="text-muted-foreground text-xs font-body mt-0.5">
+                <p className="text-muted-foreground text-xs mt-0.5">
                   {award.detail} · {award.year}
                 </p>
               </div>

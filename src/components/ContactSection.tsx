@@ -48,7 +48,7 @@ const ContactSection = () => {
 
   return (
     <>
-      <section id="contact" className="bg-primary scroll-mt-16">
+      <section id="contact" className="bg-secondary/30 scroll-mt-16">
         <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -57,10 +57,10 @@ const ContactSection = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="gold-underline" />
-            <h2 className="text-3xl md:text-4xl font-semibold text-primary-foreground font-display mb-4">
+            <h2 className="section-title mb-4">
               Get in Touch
             </h2>
-            <p className="text-primary-foreground/60 font-body max-w-2xl mb-12 leading-relaxed">
+            <p className="text-muted-foreground max-w-2xl mb-12 leading-relaxed">
               I welcome discussions on faculty opportunities, collaborative research, and industry partnerships. Whether you represent a search committee, a research group, or an organization seeking expertise in nanotechnology and biomedical imaging, I would be glad to connect.
             </p>
           </motion.div>
@@ -76,7 +76,7 @@ const ContactSection = () => {
               className="space-y-5"
             >
               <div>
-                <label htmlFor="name" className="block text-primary-foreground/70 font-body text-sm mb-1.5">
+                <label htmlFor="name" className="block text-muted-foreground text-sm mb-1.5">
                   Name
                 </label>
                 <input
@@ -86,12 +86,12 @@ const ContactSection = () => {
                   maxLength={100}
                   value={formData.name}
                   onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
-                  className="w-full px-4 py-2.5 rounded-md bg-primary-foreground/10 border border-primary-foreground/15 text-primary-foreground font-body text-sm placeholder:text-primary-foreground/30 focus:outline-none focus:border-accent transition-colors"
+                  className="w-full px-4 py-2.5 rounded-md bg-card border border-border text-foreground text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent transition-colors"
                   placeholder="Your name"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-primary-foreground/70 font-body text-sm mb-1.5">
+                <label htmlFor="email" className="block text-muted-foreground text-sm mb-1.5">
                   Email
                 </label>
                 <input
@@ -101,12 +101,12 @@ const ContactSection = () => {
                   maxLength={255}
                   value={formData.email}
                   onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
-                  className="w-full px-4 py-2.5 rounded-md bg-primary-foreground/10 border border-primary-foreground/15 text-primary-foreground font-body text-sm placeholder:text-primary-foreground/30 focus:outline-none focus:border-accent transition-colors"
+                  className="w-full px-4 py-2.5 rounded-md bg-card border border-border text-foreground text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent transition-colors"
                   placeholder="you@example.com"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-primary-foreground/70 font-body text-sm mb-1.5">
+                <label htmlFor="message" className="block text-muted-foreground text-sm mb-1.5">
                   Message
                 </label>
                 <textarea
@@ -116,7 +116,7 @@ const ContactSection = () => {
                   rows={5}
                   value={formData.message}
                   onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
-                  className="w-full px-4 py-2.5 rounded-md bg-primary-foreground/10 border border-primary-foreground/15 text-primary-foreground font-body text-sm placeholder:text-primary-foreground/30 focus:outline-none focus:border-accent transition-colors resize-none"
+                  className="w-full px-4 py-2.5 rounded-md bg-card border border-border text-foreground text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent transition-colors resize-none"
                   placeholder="Your message..."
                 />
               </div>
@@ -141,16 +141,16 @@ const ContactSection = () => {
               <div className="space-y-4">
                 <a
                   href="mailto:xiaozhen@stanford.edu"
-                  className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors font-body"
+                  className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors"
                 >
                   <Mail className="w-5 h-5 text-accent" />
                   xiaozhen@stanford.edu
                 </a>
-                <div className="flex items-center gap-3 text-primary-foreground/70 font-body">
+                <div className="flex items-center gap-3 text-muted-foreground">
                   <Phone className="w-5 h-5 text-accent" />
                   +1 (401) 699-4590
                 </div>
-                <div className="flex items-center gap-3 text-primary-foreground/70 font-body">
+                <div className="flex items-center gap-3 text-muted-foreground">
                   <MapPin className="w-5 h-5 text-accent" />
                   California, USA
                 </div>
@@ -158,7 +158,7 @@ const ContactSection = () => {
 
               {/* Social Links */}
               <div>
-                <p className="text-primary-foreground/50 font-body text-sm uppercase tracking-wider mb-4">
+                <p className="text-muted-foreground/60 text-sm uppercase tracking-wider mb-4">
                   Profiles
                 </p>
                 <div className="flex gap-4">
@@ -169,7 +169,7 @@ const ContactSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={link.label}
-                      className="w-10 h-10 rounded-full border border-primary-foreground/20 flex items-center justify-center text-primary-foreground/60 hover:border-accent hover:text-accent transition-colors"
+                      className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:border-accent hover:text-accent transition-colors"
                     >
                       {link.icon}
                     </a>
@@ -182,9 +182,9 @@ const ContactSection = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary border-t border-primary-foreground/10">
-        <div className="max-w-5xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-primary-foreground/40 font-body text-xs">
+      <footer className="bg-background border-t border-border">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-muted-foreground/50 text-xs">
             © {new Date().getFullYear()} Zhen Xiao. All rights reserved.
           </p>
           <div className="flex gap-6">
@@ -195,7 +195,7 @@ const ContactSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={link.label}
-                className="text-primary-foreground/30 hover:text-accent transition-colors"
+                className="text-muted-foreground/40 hover:text-accent transition-colors"
               >
                 {link.icon}
               </a>
