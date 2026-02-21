@@ -87,7 +87,7 @@ const publications = [
 
 const PublicationsSection = () => {
   return (
-    <section id="publications" className="bg-background scroll-mt-16">
+    <section id="publications" className="bg-secondary/30 scroll-mt-16">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -97,7 +97,7 @@ const PublicationsSection = () => {
         >
           <div className="gold-underline" />
           <h2 className="section-title">Selected Publications</h2>
-          <p className="section-subtitle font-body">
+          <p className="section-subtitle">
             <a
               href="https://scholar.google.com/citations?user=gJdK1kcAAAAJ&hl=en"
               target="_blank"
@@ -121,26 +121,26 @@ const PublicationsSection = () => {
                 pub.highlight ? "border-accent" : "border-border"
               }`}
             >
-              <h3 className="font-display text-lg md:text-xl font-semibold text-foreground leading-snug">
+              <h3 className="text-lg md:text-xl font-bold text-foreground leading-snug">
                 {pub.title}
               </h3>
-              <p className="text-muted-foreground text-sm font-body mt-1">
+              <p className="text-muted-foreground text-sm mt-1">
                 {pub.authors.split(/(Xiao, Z\.)/).map((part, i) =>
                   part === "Xiao, Z." ? <strong key={i} className="font-bold text-foreground">{part}</strong> : part
                 )}
               </p>
-              <p className="text-sm font-body mt-1">
+              <p className="text-sm mt-1">
                 <span className="text-accent font-medium italic">{pub.journal}</span>
                 <span className="text-muted-foreground"> · {pub.year}</span>
               </p>
-              <p className="text-muted-foreground text-sm font-body mt-2 leading-relaxed">
+              <p className="text-muted-foreground text-sm mt-2 leading-relaxed">
                 {pub.description}
               </p>
               <a
                 href={pub.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 mt-3 px-4 py-1.5 rounded-md text-xs font-semibold border border-accent text-accent bg-transparent hover:bg-accent/10 transition-colors"
+                className="inline-flex items-center gap-1.5 mt-3 px-4 py-1.5 rounded-md text-xs font-semibold border border-accent/40 text-accent bg-transparent hover:bg-accent/10 transition-colors"
               >
                 <ExternalLink className="w-3 h-3" />
                 View Paper

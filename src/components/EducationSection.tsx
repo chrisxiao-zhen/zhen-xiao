@@ -25,7 +25,7 @@ const education: { degree: string; institution: string; period: string; detail: 
 
 const EducationSection = () => {
   return (
-    <section id="education" className="bg-secondary/50">
+    <section id="education" className="bg-secondary/30">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -53,10 +53,10 @@ const EducationSection = () => {
                 </div>
               </div>
               <div>
-                <h3 className="font-display text-xl font-semibold text-foreground">{edu.degree}</h3>
-                <p className="text-foreground/80 font-body font-medium">{edu.institution}</p>
-                <p className="text-accent text-sm font-body font-medium mt-1">{edu.period}</p>
-                <p className="text-muted-foreground text-sm font-body mt-2 leading-relaxed max-w-2xl">
+                <h3 className="text-xl font-bold text-foreground">{edu.degree}</h3>
+                <p className="text-foreground/80 font-medium">{edu.institution}</p>
+                <p className="text-accent text-sm font-medium mt-1">{edu.period}</p>
+                <p className="text-muted-foreground text-sm mt-2 leading-relaxed max-w-2xl">
                   {edu.advisorLink ? (
                     <>
                       {edu.detail.split("Prof. Jianghong Rao")[0]}
