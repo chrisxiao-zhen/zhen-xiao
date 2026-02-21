@@ -155,6 +155,20 @@ const ResearchVision = () => {
                 transition={{ duration: 0.45, delay: index * 0.1 }}
                 className="rounded-xl border border-border bg-card p-6 md:p-8 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300"
               >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-2.5 rounded-lg bg-accent/10">
+                    {dir.icon}
+                  </div>
+                  <div>
+                    <span className="text-xs font-body font-medium text-accent bg-accent/10 px-2.5 py-1 rounded-full">
+                      {dir.heading}
+                    </span>
+                    <h3 className="font-display text-lg font-semibold text-foreground mt-2 leading-snug">
+                      {dir.title}
+                    </h3>
+                  </div>
+                </div>
+
                 {/* Figure */}
                 <div className="w-full rounded-lg overflow-hidden mb-5 bg-foreground/5">
                   <img
@@ -166,19 +180,6 @@ const ResearchVision = () => {
                 </div>
 
                 <div className="flex flex-col md:flex-row md:items-start gap-5">
-                  <div className="flex items-center gap-4 md:min-w-[220px] shrink-0">
-                    <div className="p-2.5 rounded-lg bg-accent/10">
-                      {dir.icon}
-                    </div>
-                    <div>
-                      <span className="text-xs font-body font-medium text-accent bg-accent/10 px-2.5 py-1 rounded-full">
-                        {dir.heading}
-                      </span>
-                      <h3 className="font-display text-lg font-semibold text-foreground mt-2 leading-snug">
-                        {dir.title}
-                      </h3>
-                    </div>
-                  </div>
 
                   <div className="flex-1 space-y-3">
                     <div>
