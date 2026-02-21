@@ -14,7 +14,7 @@ const awards: { title: string; year: string; detail: string; translational: bool
 
 const AwardsSection = () => {
   return (
-    <section id="awards" className="bg-background">
+    <section id="awards" className="bg-secondary scroll-mt-16">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

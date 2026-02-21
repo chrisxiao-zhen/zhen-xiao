@@ -3,7 +3,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="bg-secondary/30 scroll-mt-16">
+    <section id="about" className="bg-secondary scroll-mt-16">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

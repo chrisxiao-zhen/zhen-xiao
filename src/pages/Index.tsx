@@ -7,6 +7,7 @@ import GallerySection from "@/components/GallerySection";
 import EducationSection from "@/components/EducationSection";
 import AwardsSection from "@/components/AwardsSection";
 import ContactSection from "@/components/ContactSection";
+import BackToTop from "@/components/BackToTop";
 
 const Index = () => {
   return (
@@ -20,6 +21,7 @@ const Index = () => {
       <EducationSection />
       <AwardsSection />
       <ContactSection />
+      <BackToTop />
     </main>
   );
 };
