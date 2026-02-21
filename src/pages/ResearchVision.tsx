@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, Lightbulb, Atom, Globe, Magnet, Zap, Bug } from "lucide-react";
 import { Link } from "react-router-dom";
+import futureMaterials from "@/assets/future-materials.png";
+import futureOncology from "@/assets/future-oncology.png";
+import futureGlobalHealth from "@/assets/future-globalhealth.png";
 
 const pillars = [
   {
@@ -28,6 +31,7 @@ const futureDirections = [
     icon: <Magnet className="w-7 h-7 text-accent" />,
     heading: "Materials Innovation",
     title: "Ultra-Low-Field Magnetic Nanomaterials",
+    image: futureMaterials,
     vision:
       "Pioneer a new class of magnetically engineered nanoparticles with extraordinary field sensitivity, enabling cellular-level manipulation and biosensing under ambient, clinically safe field strengths.",
     approach:
@@ -39,6 +43,7 @@ const futureDirections = [
     icon: <Zap className="w-7 h-7 text-accent" />,
     heading: "Precision Oncology",
     title: "Activatable MPI/MRI Nanoprobes",
+    image: futureOncology,
     vision:
       "Develop stimulus-responsive nanoprobes whose magnetic relaxation properties switch in direct response to immunological biomarkers—cytokines, reactive oxygen species, and tumor microenvironment pH.",
     approach:
@@ -50,6 +55,7 @@ const futureDirections = [
     icon: <Bug className="w-7 h-7 text-accent" />,
     heading: "Global Health",
     title: "Magneto-Bacteriophage Diagnostics",
+    image: futureGlobalHealth,
     vision:
       "Create magnetically coupled phage-nanoparticle conjugates that selectively capture and concentrate viable pathogens from complex clinical matrices within minutes.",
     approach:
@@ -149,6 +155,16 @@ const ResearchVision = () => {
                 transition={{ duration: 0.45, delay: index * 0.1 }}
                 className="rounded-xl border border-border bg-card p-6 md:p-8 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300"
               >
+                {/* Figure */}
+                <div className="w-full rounded-lg overflow-hidden mb-5 bg-foreground/5">
+                  <img
+                    src={dir.image}
+                    alt={dir.title}
+                    className="w-full h-auto object-contain"
+                    loading="lazy"
+                  />
+                </div>
+
                 <div className="flex flex-col md:flex-row md:items-start gap-5">
                   <div className="flex items-center gap-4 md:min-w-[220px] shrink-0">
                     <div className="p-2.5 rounded-lg bg-accent/10">

@@ -170,9 +170,9 @@ const HeroSection = () => {
             <div className="mt-6">
               <a
                 href="/research-vision"
-                className="inline-flex items-center gap-2 text-accent text-sm font-semibold hover:underline transition-colors"
+                className="inline-flex items-center gap-2.5 px-10 py-4 rounded-lg border border-accent/40 text-foreground font-bold text-base tracking-wide hover:border-accent hover:text-accent transition-all hover:bg-accent/5"
               >
-                <FlaskConical className="w-4 h-4" />
+                <FlaskConical className="w-5 h-5" />
                 Explore Research Vision →
               </a>
             </div>
