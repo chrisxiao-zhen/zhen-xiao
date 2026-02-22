@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import heroBg from "@/assets/hero-bg.jpg";
 import { Mail, MapPin, ExternalLink, Download, FlaskConical } from "lucide-react";
+import ResearchVisionDialog from "./ResearchVisionDialog";
 
 const NanoParticles = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -83,6 +84,7 @@ const NanoParticles = () => {
 };
 
 const HeroSection = () => {
+  const [visionOpen, setVisionOpen] = useState(false);
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
       {/* Gradient overlay */}
@@ -168,14 +170,16 @@ const HeroSection = () => {
 
             {/* Research Vision link below */}
             <div className="mt-6">
-              <a
-                href="/research-vision"
+              <button
+                onClick={() => setVisionOpen(true)}
                 className="inline-flex items-center gap-2.5 px-10 py-4 rounded-lg border border-accent/40 text-foreground font-bold text-base tracking-wide hover:border-accent hover:text-accent transition-all hover:bg-accent/5"
               >
                 <FlaskConical className="w-5 h-5" />
                 Explore Research Vision →
-              </a>
+              </button>
             </div>
+
+            <ResearchVisionDialog open={visionOpen} onOpenChange={setVisionOpen} />
           </motion.div>
         </div>
       </div>
