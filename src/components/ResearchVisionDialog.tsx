@@ -6,6 +6,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import researchUlf from "@/assets/research-ulf.png";
 import futureMaterials from "@/assets/future-materials.png";
 import futureOncology from "@/assets/future-oncology.png";
 import futureGlobalHealth from "@/assets/future-globalhealth.png";
@@ -48,7 +49,7 @@ const futureDirections = [
     icon: <Magnet className="w-6 h-6 text-accent" />,
     heading: "Materials Innovation",
     title: "Ultra-Low-Field Magnetic Nanomaterials",
-    image: futureMaterials,
+    image: researchUlf,
     vision:
       "Nanoparticles with extraordinary field sensitivity for cellular-level manipulation under safe, ambient field strengths.",
     innovation:
