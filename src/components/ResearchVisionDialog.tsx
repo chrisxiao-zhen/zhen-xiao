@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Lightbulb, Atom, Globe, Magnet, Zap, Bug, AlertCircle, Download, ArrowRight } from "lucide-react";
+import { Lightbulb, Atom, Globe, Magnet, Zap, Bug, AlertCircle, Download, ArrowRight, X } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -100,9 +100,17 @@ const Section = ({ children, className = "" }: { children: React.ReactNode; clas
 const ResearchVisionDialog = ({ open, onOpenChange }: ResearchVisionDialogProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl w-[95vw] max-h-[90vh] p-0 gap-0 overflow-hidden border-accent/20 bg-background flex flex-col">
+      <DialogContent className="max-w-4xl w-[95vw] max-h-[90vh] p-0 gap-0 overflow-hidden border-accent/20 bg-background flex flex-col [&>button:last-child]:hidden">
         <DialogTitle className="sr-only">Research Vision</DialogTitle>
-        <div className="flex-1 overflow-y-auto">
+        {/* Sticky close button */}
+        <button
+          onClick={() => onOpenChange(false)}
+          className="sticky top-0 z-50 self-end mr-4 mt-4 p-2 rounded-full bg-card/80 backdrop-blur border border-border hover:border-accent hover:text-accent text-muted-foreground transition-colors"
+          aria-label="Close"
+        >
+          <X className="w-5 h-5" />
+        </button>
+        <div className="flex-1 overflow-y-auto -mt-6">
           <div className="px-6 md:px-12 py-10 md:py-14 space-y-16">
             {/* Thesis Statement */}
             <Section>
