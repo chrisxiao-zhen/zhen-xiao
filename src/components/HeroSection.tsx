@@ -103,16 +103,17 @@ const HeroSection = () => {
             className="flex justify-center lg:justify-end order-1 lg:order-2"
           >
             <div className="relative">
-              <div className="w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden border border-accent/20 shadow-2xl shadow-accent/5">
+              <div className="w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden shadow-2xl shadow-accent/5 relative">
                 <img
                   src={heroBg}
                   alt="Dr. Zhen Xiao"
                   className="w-full h-full object-cover"
                 />
+                {/* Radial gradient fade to blend edges into background */}
+                <div className="absolute inset-0 pointer-events-none" style={{
+                  background: 'radial-gradient(ellipse at center, transparent 50%, hsl(210 69% 14%) 100%)'
+                }} />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-72 h-72 md:w-96 md:h-96 rounded-2xl border border-accent/10 -z-10" />
-              {/* Decorative glow */}
-              <div className="absolute -top-8 -left-8 w-32 h-32 bg-accent/5 rounded-full blur-3xl" />
             </div>
           </motion.div>
 

@@ -41,9 +41,9 @@ const AwardsSection = () => {
               }`}
             >
               {award.translational ? (
-                <Sparkles className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                <Sparkles className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
               ) : (
-                <Award className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                <Award className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
               )}
               <div>
                 <h3 className={`text-sm font-semibold ${

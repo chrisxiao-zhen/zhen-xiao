@@ -48,8 +48,8 @@ const EducationSection = () => {
               className="flex gap-5"
             >
               <div className="flex-shrink-0 mt-1">
-                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
-                  <GraduationCap className="w-5 h-5 text-accent" />
+                <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center">
+                  <GraduationCap className="w-5 h-5 text-gold" />
                 </div>
               </div>
               <div>
