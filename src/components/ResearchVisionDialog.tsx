@@ -50,6 +50,8 @@ const futureDirections = [
     heading: "Materials Innovation",
     title: "Ultra-Low-Field Magnetic Nanomaterials",
     image: researchUlf,
+    background:
+      "Magnetic nanotechnology is uniquely positioned to bridge diagnostic gaps: no ionizing radiation, scalable to portable formats, and engineerable for molecular specificity at the point of care.",
     vision:
       "Nanoparticles with extraordinary field sensitivity for cellular-level manipulation under safe, ambient field strengths.",
     innovation:
@@ -64,6 +66,8 @@ const futureDirections = [
     heading: "Precision Oncology",
     title: "Activatable MPI/MRI Nanoprobes",
     image: futureOncology,
+    background:
+      "Cancer immunotherapy has transformed oncology, yet clinicians lack real-time tools to distinguish responders from non-responders—delaying interventions and causing unnecessary toxicity.",
     vision:
       "Nanoprobes whose magnetic signal switches in direct response to immune biomarkers—cytokines, ROS, tumor pH.",
     innovation:
@@ -78,6 +82,8 @@ const futureDirections = [
     heading: "Global Health",
     title: "Magneto-Bacteriophage Diagnostics",
     image: futureGlobalHealth,
+    background:
+      "Antimicrobial resistance outpaces diagnostic infrastructure worldwide, with WHO-priority pathogens spreading fastest where labs are weakest.",
     vision:
       "Phage-nanoparticle conjugates that capture and concentrate viable pathogens from clinical samples within minutes.",
     innovation:
@@ -168,11 +174,8 @@ const ResearchVisionDialog = ({ open, onOpenChange }: ResearchVisionDialogProps)
                     Why This Matters Now
                   </h3>
                 </div>
-                <p className="text-foreground font-body text-sm font-semibold leading-relaxed mb-2">
+                <p className="text-foreground font-body text-sm font-semibold leading-relaxed">
                   The gap between treatment innovation and diagnostic capability is widening—and patients are paying the price.
-                </p>
-                <p className="text-muted-foreground text-sm font-body leading-relaxed">
-                  Cancer immunotherapy has transformed oncology, yet clinicians lack real-time tools to distinguish responders from non-responders—delaying interventions and causing unnecessary toxicity. Meanwhile, antimicrobial resistance outpaces diagnostic infrastructure worldwide, with WHO-priority pathogens spreading fastest where labs are weakest. Magnetic nanotechnology is uniquely positioned to close both gaps: no ionizing radiation, scalable to portable formats, and engineerable for molecular specificity at the point of care.
                 </p>
               </div>
             </Section>
@@ -218,6 +221,11 @@ const ResearchVisionDialog = ({ open, onOpenChange }: ResearchVisionDialogProps)
                         </h4>
                       </div>
                     </div>
+
+                    {/* Background */}
+                    <p className="text-muted-foreground text-sm font-body leading-relaxed mb-3">
+                      {dir.background}
+                    </p>
 
                     {/* Vision */}
                     <p className="text-foreground/80 text-sm font-body italic leading-relaxed mb-4">
