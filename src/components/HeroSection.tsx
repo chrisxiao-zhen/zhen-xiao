@@ -149,19 +149,10 @@ const HeroSection = () => {
             {/* CTA Buttons - Larger and more prominent */}
             <div className="flex flex-wrap gap-5">
               <a
-                href="https://profiles.stanford.edu/zhen-xiao?tab=bio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-10 py-4 rounded-lg bg-accent text-accent-foreground font-bold text-base tracking-wide hover:brightness-110 transition-all shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/30"
-              >
-                <ExternalLink className="w-5 h-5" />
-                View Stanford Profile
-              </a>
-              <a
                 href="https://docs.google.com/document/d/1UrDM7kZR_LkMkVEU3GzYNniY0-twTvJy/edit?usp=sharing&ouid=117431193444659149744&rtpof=true&sd=true"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-10 py-4 rounded-lg border border-accent/40 text-foreground font-bold text-base tracking-wide hover:border-accent hover:text-accent transition-all hover:bg-accent/5"
+                className="inline-flex items-center gap-2.5 px-10 py-4 rounded-lg bg-accent text-accent-foreground font-bold text-base tracking-wide hover:brightness-110 transition-all shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/30"
               >
                 <Download className="w-5 h-5" />
                 Access CV
