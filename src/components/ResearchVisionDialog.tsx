@@ -256,8 +256,8 @@ const ResearchVisionDialog = ({ open, onOpenChange }: ResearchVisionDialogProps)
             {/* PDF Download */}
             <div className="flex justify-center pb-4">
               <a
-                href="https://docs.google.com/document/d/1UrDM7kZR_LkMkVEU3GzYNniY0-twTvJy/export?format=pdf"
-                target="_blank"
+                href="/research-vision.pdf"
+                download="Research_Vision_Zhen_Xiao.pdf"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-accent/30 text-foreground text-sm font-medium hover:border-accent hover:text-accent transition-all hover:bg-accent/5"
               >
