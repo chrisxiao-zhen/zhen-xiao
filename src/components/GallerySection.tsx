@@ -18,6 +18,7 @@ import gallery13 from "@/assets/gallery-13.png";
 import gallery14 from "@/assets/gallery-14.png";
 import gallery15 from "@/assets/gallery-15.png";
 import gallery16 from "@/assets/gallery-16.png";
+import gallery17 from "@/assets/gallery-17.png";
 import galleryVideo1 from "@/assets/gallery-video-1.mp4";
 
 type GalleryItem = {
@@ -44,6 +45,7 @@ const galleryImages: GalleryItem[] = [
   { src: gallery14, alt: "STEM image at 40M magnification showing atomic-scale ordering", caption: "High-resolution scanning transmission electron microscopy (STEM) image acquired at 40 M× magnification, revealing atomic-scale ordering within the nanomaterial." },
   { src: gallery15, alt: "SEM image of one-dimensional assembly of magnetic nanoclusters", caption: "The scanning electron microscopy (SEM) image of the one-dimensional assembly of the magnetic nanoclusters." },
   { src: gallery16, alt: "Magnetic nanoclusters with dyes under UV light", caption: "Magnetic nanoclusters with dyes conjugated to the surface (left)." },
+  { src: gallery17, alt: "Silver nanorod under TEM", caption: "Silver nanorod under TEM." },
   { src: galleryVideo1, alt: "Chain assembly of magnetic nanoclusters as nano stirbars", caption: "Chain assembly of the magnetic nanoclusters as efficient nano stirbars.", type: "video" },
 ];
 
