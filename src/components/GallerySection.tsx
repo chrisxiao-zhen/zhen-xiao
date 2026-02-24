@@ -20,6 +20,7 @@ import gallery15 from "@/assets/gallery-15.png";
 import gallery16 from "@/assets/gallery-16.png";
 import gallery17 from "@/assets/gallery-17.png";
 import gallery18 from "@/assets/gallery-18.png";
+import gallery19 from "@/assets/gallery-19.jpg";
 import galleryVideo1 from "@/assets/gallery-video-1.mp4";
 
 type GalleryItem = {
@@ -48,6 +49,7 @@ const galleryImages: GalleryItem[] = [
   { src: gallery16, alt: "Magnetic nanoclusters with dyes under UV light", caption: "Magnetic nanoclusters with dyes conjugated to the surface (left)." },
   { src: gallery17, alt: "Silver nanorod under TEM", caption: "Silver nanorod under TEM." },
   { src: gallery18, alt: "Quantum dots and gold nanoparticles in aqueous solutions", caption: "Quantum dots (left two) and gold nanoparticles (right two) in aqueous solutions." },
+  { src: gallery19, alt: "Confocal microscope image of breast cancer cells", caption: "Confocal microscope image of the breast cancer cells." },
   { src: galleryVideo1, alt: "Chain assembly of magnetic nanoclusters as nano stirbars", caption: "Chain assembly of the magnetic nanoclusters as efficient nano stirbars.", type: "video" },
 ];
 
