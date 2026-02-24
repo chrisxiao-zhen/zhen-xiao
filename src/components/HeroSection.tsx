@@ -131,8 +131,11 @@ const HeroSection = () => {
             <p className="text-lg md:text-xl text-muted-foreground mb-6">
               PhD · Postdoctoral Scholar, Stanford University
             </p>
-            <p className="text-muted-foreground text-base leading-relaxed max-w-lg mb-10">
+            <p className="text-muted-foreground text-base leading-relaxed max-w-lg mb-4">
               I engineer magnetic nanomaterials for molecular imaging, translational diagnostics, and cancer theranostics—enabling real-time diagnosis and therapy monitoring at the point of care.
+            </p>
+            <p className="text-accent text-sm md:text-base font-semibold tracking-wide mb-10">
+              Pioneering Closed-Loop Magnetic Theranostics
             </p>
 
             <div className="flex flex-wrap items-center gap-3 text-muted-foreground text-sm mb-10">
