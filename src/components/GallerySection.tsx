@@ -16,6 +16,7 @@ import gallery11 from "@/assets/gallery-11.png";
 import gallery12 from "@/assets/gallery-12.png";
 import gallery13 from "@/assets/gallery-13.png";
 import gallery14 from "@/assets/gallery-14.png";
+import gallery15 from "@/assets/gallery-15.png";
 import galleryVideo1 from "@/assets/gallery-video-1.mp4";
 
 type GalleryItem = {
@@ -40,6 +41,7 @@ const galleryImages: GalleryItem[] = [
   { src: gallery12, alt: "Magnetic separation of U2OS cancer cells", caption: "Efficient magnetic separation of U2OS cancer cells following intracellular uptake of magnetic nanoclusters, achieved using simple fridge magnets." },
   { src: gallery13, alt: "Iron Oxide Man nanocluster assembly", caption: "A human-like assembly of iron oxide nanoclusters observed by TEM, arising from collective magnetic interactions (\"Iron Oxide Man\")." },
   { src: gallery14, alt: "STEM image at 40M magnification showing atomic-scale ordering", caption: "High-resolution scanning transmission electron microscopy (STEM) image acquired at 40 M× magnification, revealing atomic-scale ordering within the nanomaterial." },
+  { src: gallery15, alt: "SEM image of one-dimensional assembly of magnetic nanoclusters", caption: "The scanning electron microscopy (SEM) image of the one-dimensional assembly of the magnetic nanoclusters." },
   { src: galleryVideo1, alt: "Chain assembly of magnetic nanoclusters as nano stirbars", caption: "Chain assembly of the magnetic nanoclusters as efficient nano stirbars.", type: "video" },
 ];
 
