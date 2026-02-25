@@ -10,6 +10,15 @@ import researchNanoclusters from "@/assets/research-nanoclusters.png";
 
 const researchHighlights = [
   {
+    title: "Magnetic Nanoclusters",
+    impact: "Order-of-magnitude susceptibility gains powering next-gen imaging and therapy",
+    description:
+      "Conventional magnetic nanoparticles often lack the magnetic responsiveness needed for demanding biomedical applications. I engineered magnetic nanoclusters achieving an order-of-magnitude increase in magnetic susceptibility, providing dramatically improved performance for MRI/MPI imaging, drug delivery, and thermal therapy. These nanoclusters serve as a versatile enabling platform that underpins the diagnostic and therapeutic capabilities across my entire research program.",
+    image: researchNanoclusters,
+    imageAlt: "Magnetic Nanoclusters with Enhanced Magnetic Properties",
+    funding: null,
+  },
+  {
     title: "Cancer Theranostics",
     impact: "Unifying imaging and therapy for real-time precision oncology",
     description:
@@ -52,15 +61,6 @@ const researchHighlights = [
       "Cancer cells exhibit heightened dependence on copper-mediated mitochondrial respiration—an underexplored metabolic vulnerability. I formulated lipid-based nanoparticles that selectively sequester copper within mitochondria, disrupting the electron transport chain and inducing selective cancer cell death while sparing healthy tissue. This work establishes mitochondrial copper depletion as a novel therapeutic axis, providing a platform for metabolically targeted nanomedicine.",
     image: researchCopper,
     imageAlt: "Mitochondrial-Specific Copper Trap Nanoparticles",
-    funding: null,
-  },
-  {
-    title: "Magnetic Nanoclusters",
-    impact: "Order-of-magnitude susceptibility gains powering next-gen imaging and therapy",
-    description:
-      "Conventional magnetic nanoparticles often lack the magnetic responsiveness needed for demanding biomedical applications. I engineered magnetic nanoclusters achieving an order-of-magnitude increase in magnetic susceptibility, providing dramatically improved performance for MRI/MPI imaging, drug delivery, and thermal therapy. These nanoclusters serve as a versatile enabling platform that underpins the diagnostic and therapeutic capabilities across my entire research program.",
-    image: researchNanoclusters,
-    imageAlt: "Magnetic Nanoclusters with Enhanced Magnetic Properties",
     funding: null,
   },
 ];
