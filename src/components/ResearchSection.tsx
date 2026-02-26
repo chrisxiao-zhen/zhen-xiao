@@ -271,50 +271,13 @@ const ResearchSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-14 rounded-xl border border-border/60 bg-card/30 p-6 md:p-8"
-        >
-          <h3 className="text-sm font-bold tracking-widest uppercase text-accent mb-1 text-center">
-            Research Program Map
-          </h3>
-          <p className="text-muted-foreground text-xs text-center mb-6 max-w-xl mx-auto">
-            A unified pipeline from foundational materials through clinical translation—each stage building directly on the last.
-          </p>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-0">
-            {stagesMeta.map((stage, i) => {
-              const Icon = stage.icon;
-              return (
-                <div key={stage.id} className="flex items-center gap-3">
-                  <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-lg bg-muted/50 border border-border/40">
-                    <div className="w-8 h-8 rounded-full bg-accent/15 flex items-center justify-center">
-                      <Icon className="w-4 h-4 text-accent" />
-                    </div>
-                    <div>
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-accent block">Stage {i + 1}</span>
-                      <span className="text-xs font-semibold text-foreground">{stage.label}</span>
-                    </div>
-                  </div>
-                  {i < stagesMeta.length - 1 && (
-                    <ArrowRight className="w-5 h-5 text-accent/40 hidden md:block flex-shrink-0" />
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </motion.div>
-
-        {/* Pipeline Title */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
           className="text-center mb-6"
         >
-          <h3 className="text-sm font-semibold tracking-widest uppercase text-muted-foreground mb-1">
+          <h3 className="text-sm font-bold tracking-widest uppercase text-accent mb-1">
             From First Principles to Clinical Translation
           </h3>
-          <p className="text-xs text-muted-foreground/70 max-w-md mx-auto">
-            Select a pipeline stage to explore the projects driving each phase of this translational research program.
+          <p className="text-muted-foreground text-xs max-w-xl mx-auto">
+            A unified pipeline from foundational materials through clinical translation—select a stage to explore the projects driving each phase.
           </p>
         </motion.div>
 
