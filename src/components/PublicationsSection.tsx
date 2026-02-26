@@ -4,6 +4,7 @@ import pubTbDetection from "@/assets/pub-tb-detection.png";
 import pubSersDetection from "@/assets/pub-sers-detection.png";
 import pubNanoclustersIcd from "@/assets/pub-nanoclusters-icd.png";
 import pubNeuralControl from "@/assets/pub-neural-control.png";
+import pubMulticoreNp from "@/assets/pub-multicore-np.png";
 
 const publications = [
   {
@@ -90,6 +91,7 @@ const publications = [
     year: "2020",
     url: "https://pubs.acs.org/doi/abs/10.1021/acsami.0c09778",
     description: "Establishes the fundamental chemical principles for synthesizing tunable magnetic multicore structures, which are essential for optimizing image contrast in MRI.",
+    image: pubMulticoreNp,
   },
 ];
 
