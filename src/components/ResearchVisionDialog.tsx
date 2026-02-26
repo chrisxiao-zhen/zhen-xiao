@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dialog";
 import researchUlf from "@/assets/research-ulf.png";
 import futureMaterials from "@/assets/future-materials.png";
-import futureOncology from "@/assets/future-oncology.png";
+import researchNanoprobe from "@/assets/research-nanoprobe.png";
 import futureGlobalHealth from "@/assets/future-globalhealth.png";
 
 const RESEARCH_IDENTITY = "Closed-Loop Magnetic Theranostics";
@@ -78,7 +78,8 @@ const futureDirections = [
     icon: <Zap className="w-6 h-6 text-accent" />,
     heading: "Precision Oncology",
     title: "Activatable MPI/MRI Nanoprobes",
-    image: futureOncology,
+    image: researchNanoprobe,
+    imageBg: true,
     background:
       "Cancer immunotherapy has transformed oncology, yet clinicians lack real-time tools to distinguish responders from non-responders—delaying interventions and causing unnecessary toxicity.",
     vision:
@@ -263,7 +264,7 @@ const DeepDive = ({ activeSection, sectionRefs }: { activeSection: SectionId; se
             </div>
             <p className="text-muted-foreground text-sm font-body leading-relaxed mb-3">{dir.background}</p>
             <p className="text-foreground/80 text-sm font-body italic leading-relaxed mb-4">{dir.vision}</p>
-            <div className="w-full rounded-md overflow-hidden mb-5 bg-foreground/5">
+            <div className={`w-full rounded-md overflow-hidden mb-5 ${(dir as any).imageBg ? 'bg-white p-3' : 'bg-foreground/5'}`}>
               <img src={dir.image} alt={dir.title} className="w-full h-auto object-contain" loading="lazy" />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
