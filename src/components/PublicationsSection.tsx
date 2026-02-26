@@ -3,6 +3,7 @@ import { ExternalLink } from "lucide-react";
 import pubTbDetection from "@/assets/pub-tb-detection.png";
 import pubSersDetection from "@/assets/pub-sers-detection.png";
 import pubNanoclustersIcd from "@/assets/pub-nanoclusters-icd.png";
+import pubNeuralControl from "@/assets/pub-neural-control.png";
 
 const publications = [
   {
@@ -72,6 +73,7 @@ const publications = [
     year: "2022",
     url: "https://www.nature.com/articles/s41563-022-01281-7",
     description: "This interdisciplinary study showcases the use of magnetic nanomaterials for high-precision, in vivo biological control, demonstrating the versatility of these technologies in complex living systems.",
+    image: pubNeuralControl,
   },
   {
     authors: "Stinnett, G., Taheri, N., Villanova, J., Bohloul, A., Guo, X., Esposito, E.P., Xiao, Z., Stueber, D., Avendano, C., Decuzzi, P.",
