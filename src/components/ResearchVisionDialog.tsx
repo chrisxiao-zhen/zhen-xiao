@@ -7,7 +7,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import researchUlf from "@/assets/research-ulf.png";
-import futureMaterials from "@/assets/future-materials.png";
+import futureMaterials from "@/assets/future-materials-new.png";
 import researchNanoprobe from "@/assets/research-nanoprobe.png";
 import futureGlobalHealth from "@/assets/future-globalhealth.png";
 
