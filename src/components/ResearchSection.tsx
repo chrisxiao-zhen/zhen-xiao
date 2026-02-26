@@ -59,7 +59,7 @@ const allProjects: Project[] = [
     imageAlt: "Magnetic Nanoclusters with Enhanced Magnetic Properties",
     funding: null,
     stage: "materials",
-    applications: ["imaging", "cancer"],
+    applications: ["nanomaterials design"],
   },
   {
     title: "Multifunctional Nanomaterial Synthesis",
@@ -70,7 +70,7 @@ const allProjects: Project[] = [
     imageAlt: "Multifunctional Nanomaterial Synthesis",
     funding: null,
     stage: "materials",
-    applications: ["imaging", "cancer", "infectious disease"],
+    applications: ["nanomaterials design"],
   },
   {
     title: "Tuberculosis Diagnostics",
@@ -114,7 +114,7 @@ const allProjects: Project[] = [
     imageAlt: "Multimodal Nanoprobe Activation",
     funding: null,
     stage: "theranostics",
-    applications: ["cancer", "imaging"],
+    applications: ["imaging"],
   },
   {
     title: "Copper-Depleting Nanoparticles",
@@ -131,6 +131,7 @@ const allProjects: Project[] = [
 
 const applicationAreas = [
   { id: "all", label: "All Projects" },
+  { id: "nanomaterials design", label: "Nanomaterials Design" },
   { id: "cancer", label: "Cancer" },
   { id: "infectious disease", label: "Infectious Disease" },
   { id: "imaging", label: "Imaging" },
