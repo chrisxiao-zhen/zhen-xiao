@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import pubTbDetection from "@/assets/pub-tb-detection.png";
 import pubSersDetection from "@/assets/pub-sers-detection.png";
+import pubNanoclustersIcd from "@/assets/pub-nanoclusters-icd.png";
 
 const publications = [
   {
@@ -62,6 +63,7 @@ const publications = [
     year: "2022",
     url: "https://pubs.acs.org/doi/abs/10.1021/acsnano.2c06776",
     description: "Focuses on the theranostic application of imaging-capable clusters, showing how localized magnetic hyperthermia can trigger systemic anti-tumor immunity.",
+    image: pubNanoclustersIcd,
   },
   {
     authors: "Sebesta, C., Torres Hinojosa, D., Wang, B., Asfouri, J., Li, Z., Duret, G., Jiang, K., Xiao, Z., Zhang, L., Zhang, Q.",
