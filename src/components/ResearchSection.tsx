@@ -34,12 +34,12 @@ const pipelineStages = [
         funding: null,
       },
       {
-        title: "Copper-Depleting Nanoparticles",
-        impact: "Targeting mitochondrial copper as a novel cancer therapy axis",
+        title: "Multifunctional Nanomaterial Synthesis",
+        impact: "Engineering diverse inorganic and organic nanoplatforms for tailored biomedical applications",
         description:
-          "Cancer cells exhibit heightened dependence on copper-mediated mitochondrial respiration—an underexplored metabolic vulnerability. I formulated lipid-based nanoparticles that selectively sequester copper within mitochondria, disrupting the electron transport chain and inducing selective cancer cell death while sparing healthy tissue. This work establishes mitochondrial copper depletion as a novel therapeutic axis, providing a platform for metabolically targeted nanomedicine.",
-        image: researchCopper,
-        imageAlt: "Mitochondrial-Specific Copper Trap Nanoparticles",
+          "Beyond magnetic systems, I synthesize and characterize a versatile library of nanoscale architectures to address distinct biomedical challenges. My expertise spans inorganic platforms—including plasmonic gold and silver nanoparticles for high-sensitivity optical sensing (SERS), and gadolinium oxide nanoparticles for enhanced MRI contrast. In parallel, I formulate biocompatible organic platforms, such as lipid and protein-based nanocarriers, to facilitate the targeted delivery of therapeutic payloads. By precisely controlling the size, morphology, and surface chemistry across these diverse formulations, I create a robust foundational toolkit that powers downstream diagnostic and theranostic technologies.",
+        image: "",
+        imageAlt: "Multifunctional Nanomaterial Synthesis",
         funding: null,
       },
     ],
@@ -94,6 +94,15 @@ const pipelineStages = [
         imageAlt: "Multimodal Nanoprobe Activation",
         funding: null,
       },
+      {
+        title: "Copper-Depleting Nanoparticles",
+        impact: "Targeting mitochondrial copper as a novel cancer therapy axis",
+        description:
+          "Cancer cells exhibit heightened dependence on copper-mediated mitochondrial respiration—an underexplored metabolic vulnerability. I formulated lipid-based nanoparticles that selectively sequester copper within mitochondria, disrupting the electron transport chain and inducing selective cancer cell death while sparing healthy tissue. This work establishes mitochondrial copper depletion as a novel therapeutic axis, providing a platform for metabolically targeted nanomedicine.",
+        image: researchCopper,
+        imageAlt: "Mitochondrial-Specific Copper Trap Nanoparticles",
+        funding: null,
+      },
     ],
   },
 ];
@@ -104,17 +113,26 @@ const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <>
       <div className="bg-card/60 rounded-xl border border-border/60 overflow-hidden hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 group flex flex-col md:flex-row">
-        <div
-          className="md:w-72 flex-shrink-0 overflow-hidden cursor-pointer"
-          onClick={() => setLightboxOpen(true)}
-        >
-          <img
-            src={project.image}
-            alt={project.imageAlt}
-            className="w-full h-48 md:h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
-          />
-        </div>
+        {project.image ? (
+          <div
+            className="md:w-72 flex-shrink-0 overflow-hidden cursor-pointer"
+            onClick={() => setLightboxOpen(true)}
+          >
+            <img
+              src={project.image}
+              alt={project.imageAlt}
+              className="w-full h-48 md:h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+          </div>
+        ) : (
+          <div className="md:w-72 flex-shrink-0 bg-muted/40 border-r border-border/40 flex items-center justify-center">
+            <div className="w-full h-48 md:h-full flex flex-col items-center justify-center gap-2 text-muted-foreground">
+              <Atom className="w-10 h-10 opacity-40" />
+              <span className="text-xs opacity-60">Image coming soon</span>
+            </div>
+          </div>
+        )}
         <div className="p-6 flex flex-col flex-1">
           {project.funding && (
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent border border-accent/20 w-fit mb-3">
