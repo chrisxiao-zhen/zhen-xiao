@@ -8,7 +8,7 @@ const stats = [
   { icon: Award, value: "8+", label: "Years Nanotech Experience" },
   { icon: BookOpen, value: "20+", label: "Publications" },
   { icon: Quote, value: "700+", label: "Citations" },
-  { icon: Landmark, value: "SPARK & Gates", label: "Foundation Support" },
+  { icon: Landmark, value: "SPARK & Gates", label: "Foundation Supported" },
 ];
 
 const AboutSection = () => {
@@ -36,7 +36,7 @@ const AboutSection = () => {
         >
           {/* Headshot */}
           <div className="flex justify-center md:justify-start">
-            <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-2xl shadow-accent/5 flex-shrink-0">
+            <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-2xl shadow-accent/20 ring-1 ring-accent/10 flex-shrink-0" style={{ boxShadow: '0 0 40px 2px hsl(var(--accent) / 0.15), 0 20px 50px -12px hsl(var(--accent) / 0.2)' }}>
               <img
                 src={heroBg}
                 alt="Dr. Zhen Xiao"

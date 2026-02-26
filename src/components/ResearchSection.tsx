@@ -450,7 +450,7 @@ const ResearchSection = () => {
                   onClick={() => setActiveApp(area.id)}
                   className={`px-4 py-1.5 rounded-full text-xs font-semibold border transition-all ${
                     activeApp === area.id
-                      ? "border-accent bg-accent/10 text-accent"
+                      ? "border-accent bg-accent text-accent-foreground shadow-sm"
                       : "border-border/40 text-muted-foreground hover:border-accent/40 hover:text-foreground"
                   }`}
                 >
@@ -459,16 +459,22 @@ const ResearchSection = () => {
               ))}
             </div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.3 }}
-              className="space-y-6"
-            >
-              {(filteredProjects ?? allProjects).map((project) => (
-                <ProjectCard key={project.title} project={project} />
-              ))}
-            </motion.div>
+            <div className="space-y-6">
+              <AnimatePresence mode="popLayout">
+                {(filteredProjects ?? allProjects).map((project) => (
+                  <motion.div
+                    key={project.title}
+                    layout
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                  >
+                    <ProjectCard project={project} />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </div>
           </>
         )}
       </div>
