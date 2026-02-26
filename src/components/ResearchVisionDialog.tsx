@@ -169,7 +169,10 @@ const QuickOverview = () => (
 );
 
 // Full Deep Dive Component
-const DeepDive = ({ activeSection, sectionRefs }: { activeSection: SectionId; sectionRefs: React.MutableRefObject<Record<SectionId, HTMLDivElement | null>> }) => (
+const DeepDive = ({ activeSection, sectionRefs }: { activeSection: SectionId; sectionRefs: React.MutableRefObject<Record<SectionId, HTMLDivElement | null>> }) => {
+  const [expandedDir, setExpandedDir] = useState<string>(futureDirections[0].title);
+
+  return (
   <motion.div
     initial={{ opacity: 0, y: 10 }}
     animate={{ opacity: 1, y: 0 }}
@@ -252,37 +255,72 @@ const DeepDive = ({ activeSection, sectionRefs }: { activeSection: SectionId; se
         </div>
       </div>
 
-      <div className="space-y-6">
-        {futureDirections.map((dir) => (
-          <div key={dir.title} className="rounded-lg border border-border bg-card p-5 md:p-7 hover:border-accent/30 transition-colors">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="p-2 rounded-md bg-accent/10">{dir.icon}</div>
-              <div>
-                <span className="text-[10px] font-body font-semibold text-accent uppercase tracking-widest">{dir.heading}</span>
-                <h4 className="font-display text-base font-bold text-foreground leading-tight">{dir.title}</h4>
-              </div>
+      <div className="space-y-4">
+        {futureDirections.map((dir) => {
+          const isExpanded = expandedDir === dir.title;
+          return (
+            <div
+              key={dir.title}
+              className={`rounded-lg border bg-card transition-colors duration-300 ${isExpanded ? 'border-accent/40' : 'border-border hover:border-accent/20'}`}
+            >
+              {/* Clickable Header */}
+              <button
+                onClick={() => setExpandedDir(isExpanded ? '' : dir.title)}
+                className="w-full flex items-center gap-3 p-5 md:p-7 text-left cursor-pointer"
+              >
+                <div className={`p-2 rounded-md transition-colors duration-300 ${isExpanded ? 'bg-accent/20' : 'bg-accent/10'}`}>{dir.icon}</div>
+                <div className="flex-1 min-w-0">
+                  <span className="text-[10px] font-body font-semibold text-accent uppercase tracking-widest">{dir.heading}</span>
+                  <h4 className="font-display text-base font-bold text-foreground leading-tight">{dir.title}</h4>
+                </div>
+                <motion.div
+                  animate={{ rotate: isExpanded ? 180 : 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="shrink-0"
+                >
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-accent">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </motion.div>
+              </button>
+
+              {/* Animated Content */}
+              <AnimatePresence initial={false}>
+                {isExpanded && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ height: { duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }, opacity: { duration: 0.25, delay: 0.1 } }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-5 md:px-7 pb-5 md:pb-7 pt-0 space-y-4">
+                      <p className="text-muted-foreground text-sm font-body leading-relaxed">{dir.background}</p>
+                      <p className="text-foreground/80 text-sm font-body italic leading-relaxed">{dir.vision}</p>
+                      <div className={`w-full rounded-md overflow-hidden ${(dir as any).imageBg ? 'bg-white p-3' : 'bg-foreground/5'}`}>
+                        <img src={dir.image} alt={dir.title} className="w-full h-auto object-contain" loading="lazy" />
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div>
+                          <span className="text-[10px] font-bold text-accent uppercase tracking-widest">Innovation</span>
+                          <p className="text-muted-foreground text-xs leading-relaxed font-body mt-1">{dir.innovation}</p>
+                        </div>
+                        <div>
+                          <span className="text-[10px] font-bold text-accent uppercase tracking-widest">Approach</span>
+                          <p className="text-muted-foreground text-xs leading-relaxed font-body mt-1">{dir.approach}</p>
+                        </div>
+                        <div>
+                          <span className="text-[10px] font-bold text-accent uppercase tracking-widest">Impact</span>
+                          <p className="text-muted-foreground text-xs leading-relaxed font-body mt-1">{dir.impact}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-            <p className="text-muted-foreground text-sm font-body leading-relaxed mb-3">{dir.background}</p>
-            <p className="text-foreground/80 text-sm font-body italic leading-relaxed mb-4">{dir.vision}</p>
-            <div className={`w-full rounded-md overflow-hidden mb-5 ${(dir as any).imageBg ? 'bg-white p-3' : 'bg-foreground/5'}`}>
-              <img src={dir.image} alt={dir.title} className="w-full h-auto object-contain" loading="lazy" />
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div>
-                <span className="text-[10px] font-bold text-accent uppercase tracking-widest">Innovation</span>
-                <p className="text-muted-foreground text-xs leading-relaxed font-body mt-1">{dir.innovation}</p>
-              </div>
-              <div>
-                <span className="text-[10px] font-bold text-accent uppercase tracking-widest">Approach</span>
-                <p className="text-muted-foreground text-xs leading-relaxed font-body mt-1">{dir.approach}</p>
-              </div>
-              <div>
-                <span className="text-[10px] font-bold text-accent uppercase tracking-widest">Impact</span>
-                <p className="text-muted-foreground text-xs leading-relaxed font-body mt-1">{dir.impact}</p>
-              </div>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
 
@@ -294,7 +332,8 @@ const DeepDive = ({ activeSection, sectionRefs }: { activeSection: SectionId; se
       </p>
     </div>
   </motion.div>
-);
+  );
+};
 
 const ResearchVisionDialog = ({ open, onOpenChange }: ResearchVisionDialogProps) => {
   const [mode, setMode] = useState<"overview" | "deep-dive">("deep-dive");
