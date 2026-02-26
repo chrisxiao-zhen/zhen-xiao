@@ -7,6 +7,7 @@ import researchTb from "@/assets/research-tb.png";
 import researchAbp from "@/assets/research-abp.png";
 import researchCopper from "@/assets/research-copper.png";
 import researchNanoclusters from "@/assets/research-nanoclusters.png";
+import researchNanomaterials from "@/assets/research-nanomaterials.png";
 
 interface Project {
   title: string;
@@ -38,7 +39,7 @@ const pipelineStages = [
         impact: "Engineering diverse inorganic and organic nanoplatforms for tailored biomedical applications",
         description:
           "Beyond magnetic systems, I synthesize and characterize a versatile library of nanoscale architectures to address distinct biomedical challenges. My expertise spans inorganic platforms—including plasmonic gold and silver nanoparticles for high-sensitivity optical sensing (SERS), and gadolinium oxide nanoparticles for enhanced MRI contrast. In parallel, I formulate biocompatible organic platforms, such as lipid and protein-based nanocarriers, to facilitate the targeted delivery of therapeutic payloads. By precisely controlling the size, morphology, and surface chemistry across these diverse formulations, I create a robust foundational toolkit that powers downstream diagnostic and theranostic technologies.",
-        image: "",
+        image: researchNanomaterials,
         imageAlt: "Multifunctional Nanomaterial Synthesis",
         funding: null,
       },
