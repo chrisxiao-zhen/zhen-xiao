@@ -71,10 +71,11 @@ const AboutSection = () => {
             </p>
             <button
               onClick={() => setVisionOpen(true)}
-              className="inline-flex items-center gap-2.5 px-8 py-3 rounded-lg border border-accent/40 text-foreground font-bold text-sm tracking-wide hover:border-accent hover:text-accent transition-all hover:bg-accent/5"
+              className="group inline-flex items-center gap-3 px-10 py-4 rounded-xl bg-accent/10 border border-accent/30 text-accent font-bold text-base tracking-wide hover:bg-accent hover:text-accent-foreground hover:border-accent hover:shadow-[0_0_30px_4px_hsl(177_100%_42%/0.25)] transition-all duration-300"
             >
-              <FlaskConical className="w-4 h-4" />
-              Research Vision →
+              <FlaskConical className="w-5 h-5" />
+              Research Vision
+              <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
             </button>
             <ResearchVisionDialog open={visionOpen} onOpenChange={setVisionOpen} />
           </div>
