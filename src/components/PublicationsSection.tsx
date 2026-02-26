@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import pubTbDetection from "@/assets/pub-tb-detection.png";
+import pubSersDetection from "@/assets/pub-sers-detection.png";
 
 const publications = [
   {
@@ -52,6 +53,7 @@ const publications = [
     year: "2023",
     url: "https://pubs.acs.org/doi/abs/10.1021/acssensors.3c01345",
     description: "Demonstrates proficiency in optical imaging methods (SERS) for simultaneous detection of multiple drug-resistant pathogens.",
+    image: pubSersDetection,
   },
   {
     authors: "Zhang, L., Zhang, Q., Hinojosa, D.T., Jiang, K., Pham, Q.K., Xiao, Z., Colvin, V.L., Bao, G.",
