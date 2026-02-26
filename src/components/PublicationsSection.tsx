@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ExternalLink, X } from "lucide-react";
 import pubTbDetection from "@/assets/pub-tb-detection.png";
 import pubSersDetection from "@/assets/pub-sers-detection.png";
 import pubNanoclustersIcd from "@/assets/pub-nanoclusters-icd.png";
@@ -96,7 +97,37 @@ const publications = [
 ];
 
 const PublicationsSection = () => {
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+
   return (
+    <>
+      <AnimatePresence>
+        {lightboxImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm cursor-pointer"
+            onClick={() => setLightboxImage(null)}
+          >
+            <button
+              onClick={() => setLightboxImage(null)}
+              className="absolute top-4 right-4 text-white/80 hover:text-white z-50"
+            >
+              <X className="w-8 h-8" />
+            </button>
+            <motion.img
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              src={lightboxImage}
+              alt="Publication figure"
+              className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     <section id="publications" className="bg-secondary scroll-mt-16">
       <div className="section-container">
         <motion.div
@@ -133,11 +164,14 @@ const PublicationsSection = () => {
             >
               <div className={pub.image ? "flex flex-col md:flex-row gap-5" : ""}>
                 {pub.image && (
-                  <div className="w-full md:w-48 flex-shrink-0">
+                  <div
+                    className="w-full md:w-48 flex-shrink-0 cursor-zoom-in"
+                    onClick={() => setLightboxImage(pub.image!)}
+                  >
                     <img
                       src={pub.image}
                       alt={pub.title}
-                      className="w-full h-auto rounded-md border border-border object-cover"
+                      className="w-full h-auto rounded-md border border-border object-cover hover:opacity-80 transition-opacity"
                     />
                   </div>
                 )}
@@ -173,6 +207,7 @@ const PublicationsSection = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
