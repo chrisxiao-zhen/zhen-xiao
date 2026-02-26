@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Award, BookOpen, Quote, Landmark } from "lucide-react";
+import { Award, BookOpen, Quote, Landmark, FlaskConical } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import ResearchVisionDialog from "./ResearchVisionDialog";
 
 const stats = [
   { icon: Award, value: "8+", label: "Years Nanotech Experience" },
@@ -10,6 +12,7 @@ const stats = [
 ];
 
 const AboutSection = () => {
+  const [visionOpen, setVisionOpen] = useState(false);
   return (
     <section id="about" className="bg-secondary scroll-mt-16">
       <div className="section-container">
@@ -63,9 +66,17 @@ const AboutSection = () => {
             <p className="text-accent font-semibold text-base md:text-lg mb-6 pl-4 border-l-2 border-accent">
               Moving medicine from "one-size-fits-all" to truly adaptive, closed-loop theranostics.
             </p>
-            <p className="text-muted-foreground text-base leading-relaxed">
+            <p className="text-muted-foreground text-base leading-relaxed mb-6">
               My long-term goal is to establish an independent lab that pioneers these technologies for oncology and infectious disease—bridging the gap between nanoscale engineering and patient impact.
             </p>
+            <button
+              onClick={() => setVisionOpen(true)}
+              className="inline-flex items-center gap-2.5 px-8 py-3 rounded-lg border border-accent/40 text-foreground font-bold text-sm tracking-wide hover:border-accent hover:text-accent transition-all hover:bg-accent/5"
+            >
+              <FlaskConical className="w-4 h-4" />
+              Research Vision →
+            </button>
+            <ResearchVisionDialog open={visionOpen} onOpenChange={setVisionOpen} />
           </div>
         </motion.div>
 
