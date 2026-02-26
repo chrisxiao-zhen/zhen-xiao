@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import pubTbDetection from "@/assets/pub-tb-detection.png";
 
 const publications = [
   {
@@ -10,6 +11,7 @@ const publications = [
     url: "https://pubs.acs.org/doi/abs/10.1021/jacsau.5c01050",
     description: "Demonstrates the clinical implementation of magnetic nanomaterials for rapid, point-of-care pathogen detection, a project supported by Stanford SPARK Translational Research Program.",
     highlight: true,
+    image: pubTbDetection,
   },
   {
     authors: "Lee, C.H., Xiao, Z., Lim, I., Wang, T., Aghaei, P., Burke, P.J., Rao, J.",
@@ -121,30 +123,43 @@ const PublicationsSection = () => {
                 pub.highlight ? "border-accent" : "border-border"
               }`}
             >
-              <h3 className="text-lg md:text-xl font-bold text-foreground leading-snug">
-                {pub.title}
-              </h3>
-              <p className="text-muted-foreground text-sm mt-1">
-                {pub.authors.split(/(Xiao, Z\.)/).map((part, i) =>
-                  part === "Xiao, Z." ? <strong key={i} className="font-bold text-foreground">{part}</strong> : part
+              <div className={pub.image ? "flex flex-col md:flex-row gap-5" : ""}>
+                {pub.image && (
+                  <div className="w-full md:w-48 flex-shrink-0">
+                    <img
+                      src={pub.image}
+                      alt={pub.title}
+                      className="w-full h-auto rounded-md border border-border object-cover"
+                    />
+                  </div>
                 )}
-              </p>
-              <p className="text-sm mt-1">
-                <span className="text-accent font-medium italic">{pub.journal}</span>
-                <span className="text-muted-foreground"> · {pub.year}</span>
-              </p>
-              <p className="text-muted-foreground text-sm mt-2 leading-relaxed">
-                {pub.description}
-              </p>
-              <a
-                href={pub.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 mt-3 px-4 py-1.5 rounded-md text-xs font-semibold border border-accent/40 text-accent bg-transparent hover:bg-accent/10 transition-colors"
-              >
-                <ExternalLink className="w-3 h-3" />
-                View Paper
-              </a>
+                <div className="flex-1">
+                  <h3 className="text-lg md:text-xl font-bold text-foreground leading-snug">
+                    {pub.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mt-1">
+                    {pub.authors.split(/(Xiao, Z\.)/).map((part, i) =>
+                      part === "Xiao, Z." ? <strong key={i} className="font-bold text-foreground">{part}</strong> : part
+                    )}
+                  </p>
+                  <p className="text-sm mt-1">
+                    <span className="text-accent font-medium italic">{pub.journal}</span>
+                    <span className="text-muted-foreground"> · {pub.year}</span>
+                  </p>
+                  <p className="text-muted-foreground text-sm mt-2 leading-relaxed">
+                    {pub.description}
+                  </p>
+                  <a
+                    href={pub.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 mt-3 px-4 py-1.5 rounded-md text-xs font-semibold border border-accent/40 text-accent bg-transparent hover:bg-accent/10 transition-colors"
+                  >
+                    <ExternalLink className="w-3 h-3" />
+                    View Paper
+                  </a>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
