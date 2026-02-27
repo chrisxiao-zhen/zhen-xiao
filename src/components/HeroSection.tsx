@@ -101,7 +101,7 @@ const HeroSection = () => {
             PhD · Postdoctoral Scholar, Stanford University School of Medicine
           </p>
           <p className="text-accent text-sm md:text-base font-bold tracking-wide mb-3 border-l-2 border-accent pl-3">
-            Closed-Loop Magnetic Theranostics — from nanoscale design to patient impact
+            Closed-loop magnetic theranostics — from nanoscale design toward clinically relevant decision-making
           </p>
           <p className="text-foreground/70 text-sm md:text-[15px] font-medium italic mb-5 max-w-2xl">
             Magnetic nanotechnologies that sense, image, and treat — enabling real-time clinical decision-making for cancer and infectious disease.
