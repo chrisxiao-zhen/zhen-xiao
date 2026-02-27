@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const socialLinks = [
@@ -188,6 +189,12 @@ const ContactSection = () => {
             © {new Date().getFullYear()} Zhen Xiao. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
+            <Link
+              to="/faculty-materials"
+              className="text-muted-foreground/40 hover:text-accent transition-colors text-xs"
+            >
+              For Faculty Search Committees
+            </Link>
             <a
               href="https://profiles.stanford.edu/zhen-xiao?tab=bio"
               target="_blank"
