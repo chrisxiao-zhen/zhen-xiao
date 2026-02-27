@@ -71,8 +71,11 @@ const AboutSection = () => {
                 From monitoring immunotherapy response in real time to detecting TB in under an hour at the point of care—every project converges on this mission.
               </p>
             </div>
+            <p className="text-muted-foreground text-sm leading-relaxed mb-2">
+              This body of work defines an independent research program that integrates <span className="text-foreground font-medium">materials chemistry</span>, <span className="text-foreground font-medium">imaging physics</span>, and <span className="text-foreground font-medium">clinical translation</span> into a unified theranostic framework.
+            </p>
             <p className="text-muted-foreground text-sm leading-relaxed mb-5">
-              My long-term goal: an independent lab pioneering these technologies for <span className="text-foreground font-medium">oncology</span> and <span className="text-foreground font-medium">infectious disease</span>—bridging nanoscale engineering and patient impact.
+              My long-term goal: an independent lab pioneering these technologies for oncology and infectious disease—bridging nanoscale engineering and patient impact.
             </p>
             <button
               onClick={() => setVisionOpen(true)}
