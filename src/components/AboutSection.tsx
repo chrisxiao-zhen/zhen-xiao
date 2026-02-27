@@ -89,13 +89,38 @@ const AboutSection = () => {
           </div>
         </motion.div>
 
+        {/* Lab Philosophy */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="mt-14 max-w-2xl mx-auto"
+        >
+          <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-accent/70 mb-4 text-center">
+            Lab Philosophy
+          </p>
+          <ul className="space-y-3">
+            {[
+              "Design materials with the clinical endpoint in mind—every synthesis choice should map to a patient need.",
+              "Prioritize quantitative, reproducible measurements over qualitative observation at every stage.",
+              "Bridge disciplines deliberately: the strongest translational work lives at the intersection of chemistry, imaging physics, and medicine.",
+            ].map((point, i) => (
+              <li key={i} className="flex items-start gap-3 text-muted-foreground text-sm leading-relaxed">
+                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/60 flex-shrink-0" />
+                {point}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
         {/* Quick Stats Banner */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4"
+          className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4"
         >
           {stats.map((stat, i) => (
             <div
