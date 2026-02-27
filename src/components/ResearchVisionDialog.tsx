@@ -6,8 +6,9 @@ import {
   DialogContent,
   DialogTitle,
 } from "@/components/ui/dialog";
-
-
+import futureMaterialsFig from "@/assets/future-materials-fig.png";
+import futureOncologyFig from "@/assets/future-oncology-fig.png";
+import futureGlobalHealthFig from "@/assets/future-globalhealth-fig.png";
 const RESEARCH_IDENTITY = "Closed-Loop Magnetic Theranostics";
 
 const sectionIds = ["vision", "platforms", "why-now", "future-directions", "closing"] as const;
@@ -59,7 +60,7 @@ const futureDirections = [
     icon: <Magnet className="w-6 h-6 text-accent" />,
     heading: "Materials Innovation",
     title: "Ultra-Low-Field Magnetic Nanomaterials",
-    
+    image: futureMaterialsFig,
     background:
       "Magnetic nanotechnology is uniquely positioned to bridge diagnostic gaps: no ionizing radiation, scalable to portable formats, and engineerable for molecular specificity at the point of care.",
     vision:
@@ -75,6 +76,7 @@ const futureDirections = [
     icon: <Zap className="w-6 h-6 text-accent" />,
     heading: "Precision Oncology",
     title: "Activatable MPI/MRI Nanoprobes",
+    image: futureOncologyFig,
     background:
       "Cancer immunotherapy has transformed oncology, yet clinicians lack real-time tools to distinguish responders from non-responders—delaying interventions and causing unnecessary toxicity.",
     vision:
@@ -90,7 +92,7 @@ const futureDirections = [
     icon: <Bug className="w-6 h-6 text-accent" />,
     heading: "Global Health",
     title: "Magneto-Bacteriophage Diagnostics",
-    
+    image: futureGlobalHealthFig,
     background:
       "Antimicrobial resistance outpaces diagnostic infrastructure worldwide, with WHO-priority pathogens spreading fastest where labs are weakest.",
     vision:
@@ -292,6 +294,11 @@ const DeepDive = ({ activeSection, sectionRefs }: { activeSection: SectionId; se
                     <div className="px-5 md:px-7 pb-5 md:pb-7 pt-0 space-y-4">
                       <p className="text-muted-foreground text-sm font-body leading-relaxed">{dir.background}</p>
                       <p className="text-foreground/80 text-sm font-body italic leading-relaxed">{dir.vision}</p>
+                      {(dir as any).image && (
+                        <div className="w-full rounded-md overflow-hidden bg-foreground/5">
+                          <img src={(dir as any).image} alt={dir.title} className="w-full h-auto object-contain" loading="lazy" />
+                        </div>
+                      )}
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <div>
                           <span className="text-[10px] font-bold text-accent uppercase tracking-widest">Innovation</span>
