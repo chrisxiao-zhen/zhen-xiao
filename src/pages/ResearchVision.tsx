@@ -1,9 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, Lightbulb, Atom, Globe, Magnet, Zap, Bug, AlertCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import futureMaterials from "@/assets/future-materials.png";
-import futureOncology from "@/assets/future-oncology.png";
-import futureGlobalHealth from "@/assets/future-globalhealth.png";
 
 const pillars = [
   {
@@ -43,7 +40,7 @@ const futureDirections = [
     icon: <Magnet className="w-7 h-7 text-accent" />,
     heading: "Materials Innovation",
     title: "Ultra-Low-Field Magnetic Nanomaterials",
-    image: futureMaterials,
+    
     vision:
       "Engineer nanoparticles with extraordinary field sensitivity for cellular-level manipulation under clinically safe, ambient field strengths.",
     approach:
@@ -55,7 +52,7 @@ const futureDirections = [
     icon: <Zap className="w-7 h-7 text-accent" />,
     heading: "Precision Oncology",
     title: "Activatable MPI/MRI Nanoprobes",
-    image: futureOncology,
+    
     vision:
       "Create nanoprobes whose magnetic properties switch in direct response to immunological biomarkers—cytokines, ROS, and tumor pH.",
     approach:
@@ -67,7 +64,7 @@ const futureDirections = [
     icon: <Bug className="w-7 h-7 text-accent" />,
     heading: "Global Health",
     title: "Magneto-Bacteriophage Diagnostics",
-    image: futureGlobalHealth,
+    
     vision:
       "Develop phage-nanoparticle conjugates that selectively capture and concentrate viable pathogens from clinical samples within minutes.",
     approach:
@@ -222,15 +219,6 @@ const ResearchVision = () => {
                   {dir.vision}
                 </p>
 
-                {/* Figure */}
-                <div className="w-full rounded-lg overflow-hidden mb-8 bg-foreground/5">
-                  <img
-                    src={dir.image}
-                    alt={dir.title}
-                    className="w-full h-auto object-contain"
-                    loading="lazy"
-                  />
-                </div>
 
                 {/* Bullet points */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
