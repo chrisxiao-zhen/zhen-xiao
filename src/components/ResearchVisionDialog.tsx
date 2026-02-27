@@ -62,15 +62,15 @@ const futureDirections = [
     title: "Ultra-Low-Field Magnetic Nanomaterials",
     image: futureMaterialsFig,
     background:
-      "Magnetic nanotechnology is uniquely positioned to bridge diagnostic gaps: no ionizing radiation, scalable to portable formats, and engineerable for molecular specificity at the point of care.",
+      "My lab will exploit magnetic nanotechnology's unique advantages—no ionizing radiation, portable form factors, and molecular-level specificity—to close diagnostic gaps at the point of care.",
     vision:
-      "Nanoparticles with extraordinary field sensitivity for cellular-level manipulation under safe, ambient field strengths.",
+      "I will engineer nanoparticles with extraordinary field sensitivity for cellular-level manipulation under safe, ambient field strengths.",
     innovation:
-      "Atomic-scale tuning of magnetic anisotropy to maximize susceptibility without superconducting magnets.",
+      "My approach centers on atomic-scale tuning of magnetic anisotropy to maximize susceptibility without superconducting magnets.",
     approach:
-      "Systematic surface chemistry and crystal-phase engineering validated across MRI, MPI, and magnetometry readouts.",
+      "I will systematically optimize surface chemistry and crystal-phase engineering, validating across MRI, MPI, and magnetometry readouts.",
     impact:
-      "Clinicians gain precision diagnostics and minimally invasive therapy in any setting—including resource-limited environments.",
+      "This work will give clinicians precision diagnostics and minimally invasive therapy in any setting—including resource-limited environments.",
   },
   {
     icon: <Zap className="w-6 h-6 text-accent" />,
@@ -78,15 +78,15 @@ const futureDirections = [
     title: "Activatable MPI/MRI Nanoprobes",
     image: futureOncologyFig,
     background:
-      "Cancer immunotherapy has transformed oncology, yet clinicians lack real-time tools to distinguish responders from non-responders—delaying interventions and causing unnecessary toxicity.",
+      "Cancer immunotherapy has transformed oncology, yet clinicians still lack real-time tools to distinguish responders from non-responders. My lab will address this critical gap.",
     vision:
-      "Nanoprobes whose magnetic signal switches in direct response to immune biomarkers—cytokines, ROS, tumor pH.",
+      "I will develop nanoprobes whose magnetic signal switches in direct response to immune biomarkers—cytokines, ROS, and tumor pH.",
     innovation:
-      "Zero-background MPI sensitivity paired with anatomical MRI co-registration for quantitative immunotherapy readout.",
+      "My platform combines zero-background MPI sensitivity with anatomical MRI co-registration for quantitative immunotherapy readout.",
     approach:
-      "Biomarker-triggered assembly/disassembly architectures validated in syngeneic tumor models with longitudinal imaging.",
+      "I will design biomarker-triggered assembly/disassembly architectures and validate them in syngeneic tumor models with longitudinal imaging.",
     impact:
-      "Oncologists see immunotherapy response in real time—enabling adaptive dosing and eliminating unnecessary biopsies.",
+      "This will enable oncologists to see immunotherapy response in real time—supporting adaptive dosing and eliminating unnecessary biopsies.",
   },
   {
     icon: <Bug className="w-6 h-6 text-accent" />,
@@ -94,15 +94,15 @@ const futureDirections = [
     title: "Magneto-Bacteriophage Diagnostics",
     image: futureGlobalHealthFig,
     background:
-      "Antimicrobial resistance outpaces diagnostic infrastructure worldwide, with WHO-priority pathogens spreading fastest where labs are weakest.",
+      "Antimicrobial resistance outpaces diagnostic infrastructure worldwide. My lab will build the tools to change that—starting where the need is greatest.",
     vision:
-      "Phage-nanoparticle conjugates that capture and concentrate viable pathogens from clinical samples within minutes.",
+      "I will create phage-nanoparticle conjugates that capture and concentrate viable pathogens from clinical samples within minutes.",
     innovation:
-      "Engineered bacteriophage specificity coupled with portable magnetic readout for culture-free detection.",
+      "My strategy couples engineered bacteriophage specificity with portable magnetic readout for culture-free detection.",
     approach:
-      "Multiplexed phage libraries targeting WHO-priority resistant organisms, validated in field-simulated conditions.",
+      "I will develop multiplexed phage libraries targeting WHO-priority resistant organisms, validated in field-simulated conditions.",
     impact:
-      "Health workers detect antimicrobial-resistant infections on-site—where conventional culture and PCR are unavailable.",
+      "This will empower health workers to detect antimicrobial-resistant infections on-site—where conventional culture and PCR are unavailable.",
   },
 ];
 
@@ -246,7 +246,7 @@ const DeepDive = ({ activeSection, sectionRefs }: { activeSection: SectionId; se
         <h3 className="text-[11px] font-bold text-accent uppercase tracking-[0.2em]">Future Directions</h3>
       </div>
       <p className="text-muted-foreground font-body text-sm leading-relaxed mb-6">
-        Building on these platforms, my future research pursues three parallel, mutually reinforcing directions—each combining fundamental innovation with a clear translational pathway.
+        Building on these platforms, my lab will advance three parallel, mutually reinforcing directions—each combining fundamental innovation with a clear translational pathway.
       </p>
 
       <div className="flex items-center justify-center gap-2 mb-8">
