@@ -13,6 +13,7 @@ interface Project {
   title: string;
   impact: string;
   description: string;
+  keyPhrase: string;
   image: string;
   imageAlt: string;
   funding: string | null;
@@ -53,6 +54,7 @@ const allProjects: Project[] = [
   {
     title: "Magnetic Nanoclusters",
     impact: "Order-of-magnitude susceptibility gains powering next-gen imaging and therapy",
+    keyPhrase: "synergistic dipolar coupling",
     description:
       "I pioneered magnetic nanoclusters that achieve an order-of-magnitude increase in magnetic susceptibility over conventional nanoparticles. By engineering controlled self-assembly of iron oxide cores into superstructures with synergistic dipolar coupling, these clusters dramatically amplify MRI/MPI signal and therapeutic heating efficiency. This foundational platform underpins the diagnostic and therapeutic capabilities across my entire research program.",
     image: researchNanoclusters,
@@ -64,6 +66,7 @@ const allProjects: Project[] = [
   {
     title: "Multifunctional Nanomaterial Synthesis",
     impact: "A versatile nanoplatform toolkit for tailored biomedical applications",
+    keyPhrase: "SERS-based optical sensing to targeted drug delivery",
     description:
       "I established a comprehensive nanomaterial synthesis program spanning plasmonic gold/silver nanoparticles, gadolinium oxide contrast agents, and lipid- and protein-based nanocarriers. By precisely controlling size, morphology, and surface chemistry across inorganic and organic platforms, each formulation is optimized for a specific biomedical function—from SERS-based optical sensing to targeted drug delivery. This diverse foundational toolkit directly powers the downstream diagnostic and theranostic technologies in my pipeline.",
     image: researchNanomaterials,
@@ -75,6 +78,7 @@ const allProjects: Project[] = [
   {
     title: "Tuberculosis Diagnostics",
     impact: "Sub-hour, field-deployable pathogen detection for resource-limited settings",
+    keyPhrase: "magneto-bacteriophage assay",
     description:
       "I developed a first-in-class magneto-bacteriophage assay that detects Mycobacterium tuberculosis in under one hour from complex clinical samples. The platform combines magnetic nanoparticle enrichment with engineered bacteriophage specificity, eliminating the need for culture or centralized labs. Supported by the Stanford SPARK Program and the Gates Foundation, this technology is designed for point-of-care deployment where TB burden is highest.",
     image: researchTb,
@@ -86,6 +90,7 @@ const allProjects: Project[] = [
   {
     title: "Drug-Resistant Bacteria Detection",
     impact: "Multiplexed SERS biosensor for rapid antibiotic resistance profiling",
+    keyPhrase: "culture-independent",
     description:
       "I created a multiplexed SERS biosensor using engineered gold nanoparticles that identifies drug-resistant bacterial strains directly from clinical specimens without culture. This culture-independent approach leverages surface-enhanced Raman scattering for simultaneous multi-target detection, delivering actionable resistance profiles within minutes. The platform addresses a critical gap in clinical microbiology, enabling rapid and informed antibiotic prescribing at the point of care.",
     image: researchAbp,
@@ -97,6 +102,7 @@ const allProjects: Project[] = [
   {
     title: "Cancer Theranostics",
     impact: "Unifying imaging and therapy for real-time precision oncology",
+    keyPhrase: "closing the loop between imaging and intervention",
     description:
       "I developed integrated magnetic nanoplatforms that unify dual-modality MRI/MPI imaging with magnetically guided drug delivery in a single system. This approach enables simultaneous, real-time monitoring of drug biodistribution and therapeutic response—replacing the disconnected diagnostic-then-treat paradigm. By closing the loop between imaging and intervention, this platform enables clinicians to adapt treatment dynamically, reducing off-target toxicity and advancing precision oncology.",
     image: researchTargeting,
@@ -108,6 +114,7 @@ const allProjects: Project[] = [
   {
     title: "Immunotherapy Monitoring",
     impact: "Noninvasive nanoprobes for quantitative immune response tracking",
+    keyPhrase: "activatable MPI nanoprobes",
     description:
       "I designed activatable MPI nanoprobes that provide noninvasive, quantitative readouts of anti-tumor immune activity by responding to granzyme B released during T-cell-mediated tumor killing. This approach replaces invasive biopsies and delayed clinical endpoints with longitudinal, in vivo monitoring of immunotherapy efficacy. The technology enables early detection of treatment resistance and supports timely therapeutic optimization for individual patients.",
     image: researchNanoprobe,
@@ -119,6 +126,7 @@ const allProjects: Project[] = [
   {
     title: "Copper-Depleting Nanoparticles",
     impact: "Targeting mitochondrial copper as a novel cancer therapy axis",
+    keyPhrase: "mitochondrial copper depletion",
     description:
       "I formulated lipid-based nanoparticles that selectively sequester copper within cancer cell mitochondria, disrupting the electron transport chain and inducing targeted cell death. This strategy exploits a newly identified metabolic vulnerability—cancer cells' heightened dependence on copper-mediated respiration—while sparing healthy tissue. This work establishes mitochondrial copper depletion as a novel therapeutic axis and a platform for metabolically targeted nanomedicine.",
     image: researchCopper,
@@ -183,7 +191,20 @@ const ProjectCard = ({ project }: { project: Project }) => {
           </div>
           <h4 className="text-lg font-bold text-foreground mb-1.5">{project.title}</h4>
           <p className="text-accent text-sm font-semibold leading-snug mb-3 border-l-2 border-accent/40 pl-3">{project.impact}</p>
-          <p className="text-muted-foreground text-[13px] leading-relaxed">{project.description}</p>
+          <p className="text-muted-foreground text-[13px] leading-relaxed">
+            {project.keyPhrase && project.description.includes(project.keyPhrase)
+              ? (() => {
+                  const idx = project.description.indexOf(project.keyPhrase);
+                  return (
+                    <>
+                      {project.description.slice(0, idx)}
+                      <span className="text-foreground font-semibold">{project.keyPhrase}</span>
+                      {project.description.slice(idx + project.keyPhrase.length)}
+                    </>
+                  );
+                })()
+              : project.description}
+          </p>
         </div>
       </div>
 
