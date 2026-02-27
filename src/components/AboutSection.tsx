@@ -54,20 +54,25 @@ const AboutSection = () => {
 
           {/* 60-Second Executive Summary */}
           <div>
-            <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">
+            <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-accent/70 mb-4">
               60-Second Overview
             </p>
-            <p className="text-foreground text-lg md:text-xl font-medium leading-relaxed mb-5">
+            <p className="text-foreground text-lg md:text-xl font-semibold leading-relaxed mb-4">
               I build magnetic nanotechnologies that close the loop between diagnosis and therapy—enabling clinicians to image, detect, and treat disease in a single workflow.
             </p>
-            <p className="text-muted-foreground text-base leading-relaxed mb-4">
-              With 8+ years of experience spanning nanomaterial design, molecular imaging (MRI/MPI), and translational diagnostics, my research creates platforms that are <span className="text-foreground font-medium">activatable</span>, <span className="text-foreground font-medium">quantitative</span>, and <span className="text-foreground font-medium">clinically translatable</span>. From monitoring immunotherapy response in real time to detecting TB in under an hour at the point of care, every project converges on one mission:
+            <p className="text-muted-foreground text-[15px] leading-relaxed mb-4">
+              With 8+ years spanning nanomaterial design, molecular imaging (MRI/MPI), and translational diagnostics, my research creates platforms that are <span className="text-foreground font-semibold">activatable</span>, <span className="text-foreground font-semibold">quantitative</span>, and <span className="text-foreground font-semibold">clinically translatable</span>.
             </p>
-            <p className="text-accent font-semibold text-base md:text-lg mb-6 pl-4 border-l-2 border-accent">
-              Moving medicine from "one-size-fits-all" to truly adaptive, closed-loop theranostics.
-            </p>
-            <p className="text-muted-foreground text-base leading-relaxed mb-6">
-              My long-term goal is to establish an independent lab that pioneers these technologies for oncology and infectious disease—bridging the gap between nanoscale engineering and patient impact.
+            <div className="bg-accent/5 border border-accent/20 rounded-lg px-5 py-4 mb-5">
+              <p className="text-accent font-bold text-[15px] md:text-base leading-snug">
+                "Moving medicine from one-size-fits-all to truly adaptive, closed-loop theranostics."
+              </p>
+              <p className="text-muted-foreground text-sm mt-2 leading-relaxed">
+                From monitoring immunotherapy response in real time to detecting TB in under an hour at the point of care—every project converges on this mission.
+              </p>
+            </div>
+            <p className="text-muted-foreground text-sm leading-relaxed mb-5">
+              My long-term goal: an independent lab pioneering these technologies for <span className="text-foreground font-medium">oncology</span> and <span className="text-foreground font-medium">infectious disease</span>—bridging nanoscale engineering and patient impact.
             </p>
             <button
               onClick={() => setVisionOpen(true)}
