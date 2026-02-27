@@ -75,7 +75,7 @@ const NanoParticles = () => {
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-background">
+    <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-background">
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/50" />
       <NanoParticles />
 
@@ -86,18 +86,25 @@ const HeroSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-3xl"
         >
-          <div className="gold-underline" />
-          <h1 className="text-5xl md:text-7xl font-black text-foreground mb-4 tracking-tight leading-[1.1]">
+          {/* Discipline breadcrumb */}
+          <div className="flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-5">
+            <span>Nanotechnology</span>
+            <span className="text-accent/50">·</span>
+            <span>Molecular Imaging</span>
+            <span className="text-accent/50">·</span>
+            <span>Translational Medicine</span>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-black text-foreground mb-3 tracking-tight leading-[1.1]">
             Zhen Xiao
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-2">
-            PhD · Postdoctoral Scholar, Stanford University
+          <p className="text-base md:text-lg text-muted-foreground mb-1.5">
+            PhD · Postdoctoral Scholar, Stanford University School of Medicine
           </p>
-          <p className="text-accent text-sm md:text-base font-semibold tracking-wide mb-8">
-            Pioneering Closed-Loop Magnetic Theranostics
+          <p className="text-accent text-sm md:text-base font-bold tracking-wide mb-5 border-l-2 border-accent pl-3">
+            Closed-Loop Magnetic Theranostics — from nanoscale design to patient impact
           </p>
 
-          <div className="flex flex-wrap items-center gap-3 text-muted-foreground text-sm mb-10">
+          <div className="flex flex-wrap items-center gap-3 text-muted-foreground text-sm mb-8">
             <span className="flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-accent" />
               California, USA
@@ -109,24 +116,24 @@ const HeroSection = () => {
             </a>
           </div>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-3">
             <a
               href="https://docs.google.com/document/d/1UrDM7kZR_LkMkVEU3GzYNniY0-twTvJy/edit?usp=sharing&ouid=117431193444659149744&rtpof=true&sd=true"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-10 py-4 rounded-lg bg-accent text-accent-foreground font-bold text-base tracking-wide hover:brightness-110 transition-all shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/30"
+              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-lg bg-accent text-accent-foreground font-bold text-sm tracking-wide hover:brightness-110 transition-all shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/30"
             >
-              <Download className="w-5 h-5" />
+              <Download className="w-4 h-4" />
               Access CV
             </a>
             <a
               href="https://scholar.google.com/citations?user=gJdK1kcAAAAJ&hl=en"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-10 py-4 rounded-lg border border-accent/40 text-foreground font-bold text-base tracking-wide hover:border-accent hover:text-accent transition-all hover:bg-accent/5"
+              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-lg border border-accent/40 text-foreground font-bold text-sm tracking-wide hover:border-accent hover:text-accent transition-all hover:bg-accent/5"
             >
-              <ExternalLink className="w-5 h-5" />
-              Google Scholar Profile
+              <ExternalLink className="w-4 h-4" />
+              Google Scholar
             </a>
           </div>
 

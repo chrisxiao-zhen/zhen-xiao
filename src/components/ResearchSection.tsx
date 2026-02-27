@@ -181,9 +181,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
               {stageLabels[project.stage]}
             </span>
           </div>
-          <h4 className="text-lg font-bold text-foreground mb-2">{project.title}</h4>
-          <p className="text-accent text-sm font-medium leading-relaxed mb-3">{project.impact}</p>
-          <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
+          <h4 className="text-lg font-bold text-foreground mb-1.5">{project.title}</h4>
+          <p className="text-accent text-sm font-semibold leading-snug mb-3 border-l-2 border-accent/40 pl-3">{project.impact}</p>
+          <p className="text-muted-foreground text-[13px] leading-relaxed">{project.description}</p>
         </div>
       </div>
 

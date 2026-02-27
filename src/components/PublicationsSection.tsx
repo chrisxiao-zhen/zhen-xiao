@@ -176,19 +176,31 @@ const PublicationsSection = () => {
                   </div>
                 )}
                 <div className="flex-1">
-                  <h3 className="text-lg md:text-xl font-bold text-foreground leading-snug">
-                    {pub.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mt-1">
+                  <div className="flex items-center gap-2 flex-wrap mb-1">
+                    <h3 className="text-base md:text-lg font-bold text-foreground leading-snug">
+                      {pub.title}
+                    </h3>
+                    {pub.authors.startsWith("Xiao, Z.") && (
+                      <span className="inline-flex items-center px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider bg-accent/15 text-accent border border-accent/20">
+                        First Author
+                      </span>
+                    )}
+                    {pub.authors.includes("(co-first)") && (
+                      <span className="inline-flex items-center px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider bg-accent/10 text-accent/80 border border-accent/15">
+                        Co-First
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-muted-foreground text-xs mt-0.5">
                     {pub.authors.split(/(Xiao, Z\.)/).map((part, i) =>
                       part === "Xiao, Z." ? <strong key={i} className="font-bold text-foreground">{part}</strong> : part
                     )}
                   </p>
-                  <p className="text-sm mt-1">
-                    <span className="text-accent font-medium italic">{pub.journal}</span>
+                  <p className="text-xs mt-1">
+                    <span className="text-accent font-semibold italic">{pub.journal}</span>
                     <span className="text-muted-foreground"> · {pub.year}</span>
                   </p>
-                  <p className="text-muted-foreground text-sm mt-2 leading-relaxed">
+                  <p className="text-muted-foreground text-[13px] mt-1.5 leading-relaxed">
                     {pub.description}
                   </p>
                   <a
