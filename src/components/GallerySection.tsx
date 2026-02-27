@@ -42,7 +42,7 @@ const galleryImages: GalleryItem[] = [
   { src: gallery7, alt: "TEM image of mitochondria", caption: "TEM image of mitochondrial morphology changes induced by copper-depleting nanoparticles in triple-negative breast cancer cells." },
   { src: gallery8, alt: "Nanoparticle colloidal solutions at Brown University", caption: "Colloidal suspensions of iron oxide nanoparticles with varying sizes and surface coatings, prepared at Brown University." },
   { src: gallery9, alt: "TEM image of core-shell nanoparticles", caption: "Core-shell nanoparticle architecture visualized by TEM, engineered for enhanced MRI contrast performance." },
-  { src: gallery10, alt: "TEM image of iron oxide nanoparticles", caption: "Monodisperse iron oxide nanoparticles with uniform size distribution, optimized for biomedical imaging applications." },
+  { src: gallery10, alt: "TEM image of iron oxide nanoparticles", caption: "Monodisperse iron oxide nanocrystals with uniform size distribution." },
   { src: gallery11, alt: "Photonic crystal clusters under magnetic field", caption: "Clusters as magnetically controllable photonic crystals. Images of the cluster solution showing different colors at different external magnetic field strengths." },
   { src: gallery12, alt: "Magnetic separation of U2OS cancer cells", caption: "Efficient magnetic separation of U2OS cancer cells following intracellular uptake of magnetic nanoclusters, achieved using simple fridge magnets." },
   { src: gallery13, alt: "Iron Oxide Man nanocluster assembly", caption: "A human-like assembly of iron oxide nanoclusters observed by TEM, arising from collective magnetic interactions (\"Iron Oxide Man\")." },
