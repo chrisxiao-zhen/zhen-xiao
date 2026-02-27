@@ -100,8 +100,11 @@ const HeroSection = () => {
           <p className="text-base md:text-lg text-muted-foreground mb-1.5">
             PhD · Postdoctoral Scholar, Stanford University School of Medicine
           </p>
-          <p className="text-accent text-sm md:text-base font-bold tracking-wide mb-5 border-l-2 border-accent pl-3">
+          <p className="text-accent text-sm md:text-base font-bold tracking-wide mb-3 border-l-2 border-accent pl-3">
             Closed-Loop Magnetic Theranostics — from nanoscale design to patient impact
+          </p>
+          <p className="text-foreground/70 text-sm md:text-[15px] font-medium italic mb-5 max-w-2xl">
+            Magnetic nanotechnologies that sense, image, and treat — enabling real-time clinical decision-making for cancer and infectious disease.
           </p>
 
           <div className="flex flex-wrap items-center gap-3 text-muted-foreground text-sm mb-8">

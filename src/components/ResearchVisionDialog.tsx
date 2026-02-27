@@ -179,6 +179,11 @@ const DeepDive = ({ activeSection, sectionRefs }: { activeSection: SectionId; se
   >
     {/* Vision Section */}
     <div ref={(el) => { sectionRefs.current.vision = el; }} data-section="vision">
+      <div className="rounded-lg border border-accent/25 bg-accent/5 px-5 py-4 mb-6">
+        <p className="text-accent font-bold text-sm md:text-base tracking-wide leading-snug">
+          Closed-loop magnetic theranostics for real-time clinical decision-making
+        </p>
+      </div>
       <p className="text-foreground text-lg md:text-xl font-display font-bold leading-relaxed">
         I develop magnetic nanotechnologies that enable real-time, non-invasive imaging and diagnostics to transform cancer and infectious disease care.
       </p>
