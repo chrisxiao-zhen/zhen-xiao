@@ -39,7 +39,7 @@ const galleryImages: GalleryItem[] = [
   { src: gallery4, alt: "TEM image of nanoparticle chains on bacterium", caption: "TEM image of magnetic nanoparticle chains assembled on a Mycobacterium tuberculosis cell surface." },
   { src: gallery5, alt: "TEM images of various nanoparticle morphologies", caption: "Library of gold nanoparticle morphologies synthesized through systematic tuning of reaction parameters." },
   { src: gallery6, alt: "TEM image of cell ultrastructure", caption: "High-resolution TEM image of cancer cell ultrastructure showing nanoparticle uptake and intracellular localization." },
-  { src: gallery7, alt: "TEM image of mitochondria", caption: "TEM image of mitochondrial morphology changes induced by copper-depleting nanoparticles in triple-negative breast cancer cells." },
+  { src: gallery7, alt: "TEM image of mitochondria", caption: "TEM image of mitochondria of a triple-negative breast cancer cell." },
   { src: gallery8, alt: "Nanoparticle colloidal solutions at Brown University", caption: "Colloidal suspensions of iron oxide nanoparticles with varying sizes and surface coatings, prepared at Brown University." },
   { src: gallery9, alt: "TEM image of core-shell nanoparticles", caption: "Core-shell nanoparticle architecture visualized by TEM, engineered for enhanced MRI contrast performance." },
   { src: gallery10, alt: "TEM image of iron oxide nanoparticles", caption: "Monodisperse iron oxide nanocrystals with uniform size distribution." },
