@@ -275,6 +275,32 @@ const ResearchSection = () => {
           </p>
         </motion.div>
 
+        {/* Research Program Map */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center justify-center gap-2 md:gap-3 mb-10 flex-wrap"
+        >
+          {[
+            { label: "Materials Chemistry", icon: "⬡" },
+            { label: "Imaging Physics", icon: "◎" },
+            { label: "Diagnostics", icon: "⬢" },
+            { label: "Clinical Decisions", icon: "✦" },
+          ].map((step, i, arr) => (
+            <span key={step.label} className="flex items-center gap-2 md:gap-3">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-accent/5 border border-accent/15 text-xs md:text-sm font-semibold text-foreground/80">
+                <span className="text-accent text-sm">{step.icon}</span>
+                {step.label}
+              </span>
+              {i < arr.length - 1 && (
+                <ArrowRight className="w-3.5 h-3.5 text-accent/50 flex-shrink-0" />
+              )}
+            </span>
+          ))}
+        </motion.div>
+
         {/* Overview quote */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}
