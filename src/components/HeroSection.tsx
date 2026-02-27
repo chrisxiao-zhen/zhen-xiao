@@ -1,6 +1,88 @@
-import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { Mail, MapPin, Download, ExternalLink } from "lucide-react";
+
+const NanoprobeActivation = () => {
+  const [phase, setPhase] = useState<"off" | "activating" | "on">("off");
+
+  useEffect(() => {
+    const cycle = () => {
+      setPhase("off");
+      const t1 = setTimeout(() => setPhase("activating"), 2400);
+      const t2 = setTimeout(() => setPhase("on"), 3200);
+      const t3 = setTimeout(() => setPhase("off"), 6000);
+      return [t1, t2, t3];
+    };
+    let timers = cycle();
+    const interval = setInterval(() => {
+      timers = cycle();
+    }, 6800);
+    return () => {
+      clearInterval(interval);
+      timers.forEach(clearTimeout);
+    };
+  }, []);
+
+  const isOn = phase === "on";
+  const isActivating = phase === "activating";
+
+  return (
+    <div className="flex items-center gap-3 select-none" aria-hidden="true">
+      <div className="relative flex items-center justify-center w-8 h-8">
+        {isOn && (
+          <>
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0.5 }}
+              animate={{ scale: 2.2, opacity: 0 }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
+              className="absolute inset-0 rounded-full border border-accent/30"
+            />
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0.4 }}
+              animate={{ scale: 1.8, opacity: 0 }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeOut", delay: 0.6 }}
+              className="absolute inset-0 rounded-full border border-accent/20"
+            />
+          </>
+        )}
+        <motion.div
+          animate={{
+            scale: isOn ? 1 : isActivating ? 0.9 : 0.75,
+            backgroundColor: isOn
+              ? "hsl(177, 100%, 42%)"
+              : isActivating
+              ? "hsl(177, 60%, 30%)"
+              : "hsl(210, 30%, 24%)",
+            boxShadow: isOn
+              ? "0 0 12px 3px hsla(177, 100%, 42%, 0.35)"
+              : "0 0 0px 0px hsla(177, 100%, 42%, 0)",
+          }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          className="w-3 h-3 rounded-full"
+        />
+      </div>
+      <div className="flex flex-col leading-none">
+        <span className="text-[9px] font-semibold tracking-[0.15em] uppercase text-muted-foreground">
+          Nanoprobe
+        </span>
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={phase}
+            initial={{ opacity: 0, y: 3 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -3 }}
+            transition={{ duration: 0.3 }}
+            className={`text-[10px] font-bold tracking-wider uppercase ${
+              isOn ? "text-accent" : "text-muted-foreground/60"
+            }`}
+          >
+            {isOn ? "Signal ON" : isActivating ? "Activating…" : "OFF"}
+          </motion.span>
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+};
 
 const NanoParticles = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -117,6 +199,10 @@ const HeroSection = () => {
               <Mail className="w-3.5 h-3.5 text-accent" />
               xiaozhen@stanford.edu
             </a>
+          </div>
+
+          <div className="mb-6">
+            <NanoprobeActivation />
           </div>
 
           <div className="flex flex-wrap gap-3">
