@@ -329,6 +329,7 @@ const ResearchSection = () => {
         </motion.div>
 
         {/* View Mode Toggle */}
+        <p className="text-center text-muted-foreground text-xs mb-3">Explore projects by translational stage or by clinical application area.</p>
         <div className="flex justify-center mb-8">
           <div className="inline-flex items-center gap-1 p-1 rounded-lg bg-muted/50 border border-border/40">
             <button
