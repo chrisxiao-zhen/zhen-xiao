@@ -156,7 +156,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
   return (
     <>
-      <div className="bg-card/60 rounded-xl border border-border/60 overflow-hidden hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 group flex flex-col md:flex-row">
+      <div className="bg-card/60 rounded-xl border border-border/60 overflow-hidden hover:border-accent/40 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_hsl(177_100%_42%/0.25)] transition-all duration-300 ease-in-out group flex flex-col md:flex-row">
         {project.image ? (
           <div
             className="md:w-72 flex-shrink-0 overflow-hidden cursor-pointer"
