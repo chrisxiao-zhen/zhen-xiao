@@ -207,7 +207,7 @@ const HeroSection = () => {
 
           <div className="flex flex-wrap gap-3">
             <a
-              href="https://docs.google.com/document/d/1UrDM7kZR_LkMkVEU3GzYNniY0-twTvJy/edit?usp=sharing&ouid=117431193444659149744&rtpof=true&sd=true"
+              href="https://docs.google.com/document/d/1rpvGjHVZZ2mdPjQONA59bLkcyQHQRn6l/edit?usp=sharing&ouid=100244505359372132625&rtpof=true&sd=true"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-lg bg-accent text-accent-foreground font-bold text-sm tracking-wide hover:brightness-110 transition-all shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/30"
