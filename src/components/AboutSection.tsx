@@ -7,7 +7,7 @@ import ResearchVisionDialog from "./ResearchVisionDialog";
 const stats = [
   { icon: Award, value: "8+", label: "Years Nanotech Experience" },
   { icon: BookOpen, value: "20+", label: "Publications" },
-  { icon: Quote, value: "700+", label: "Citations" },
+  { icon: Quote, value: "800+", label: "Citations" },
   { icon: Landmark, value: "SPARK & Gates", label: "Foundation Supported" },
 ];
 
