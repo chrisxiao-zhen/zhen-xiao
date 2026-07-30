@@ -77,7 +77,7 @@ const FacultyMaterials = () => (
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold text-accent border border-accent/25 hover:bg-accent/10 transition-colors flex-shrink-0 mt-1"
                 >
                   <Download className="w-3.5 h-3.5" />
-                  PDF
+                  {mat.label ?? "PDF"}
                 </a>
               ) : (
                 <span className="text-muted-foreground/40 text-xs italic flex-shrink-0 mt-2">
