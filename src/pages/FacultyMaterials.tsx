@@ -12,8 +12,9 @@ const materials = [
   {
     title: "Curriculum Vitae",
     description: "Complete academic CV including publications, funding, and presentations.",
-    href: null,
-    available: false,
+    href: "https://docs.google.com/document/d/1rpvGjHVZZ2mdPjQONA59bLkcyQHQRn6l/edit?usp=sharing&ouid=100244505359372132625&rtpof=true&sd=true",
+    available: true,
+    label: "View",
   },
   {
     title: "Teaching Statement",
