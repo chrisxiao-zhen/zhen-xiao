@@ -2,7 +2,13 @@ import { motion } from "framer-motion";
 import { FileText, Download, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const materials = [
+const materials: {
+  title: string;
+  description: string;
+  href: string | null;
+  available: boolean;
+  label?: string;
+}[] = [
   {
     title: "Research Vision",
     description: "Closed-loop magnetic theranostics — full research statement and future directions.",
